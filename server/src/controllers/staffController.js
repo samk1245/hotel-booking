@@ -1,0 +1,99 @@
+import bcrypt from 'bcryptjs';
+import { dataStore } from '../models/dataStore.js';
+
+export const getStaffList = (req, res) => {
+  try {
+    const users = dataStore.getUsers();
+    return res.status(200).json({ success: true, count: users.length, users });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Could not load staff accounts.' });
+  }
+};
+
+export const createStaffAccount = async (req, res) => {
+  try {
+    const { name, email, password, role } = req.body;
+
+    if (!name || !email || !password || password.length < 8) {
+      return res.status(400).json({
+        success: false,
+        message: 'Name, email, and password (min 8 characters) are required.'
+      });
+    }
+
+    const existing = dataStore.getUserByEmail(email);
+    if (existing) {
+      return res.status(400).json({ success: false, message: 'An account with this email already exists.' });
+    }
+
+    const passwordHash = await bcrypt.hash(password, 10);
+    const newUser = dataStore.createUser({
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      passwordHash,
+      role: role || 'staff',
+      isActive: true,
+      createdBy: req.user.name
+    });
+
+    dataStore.logActivity({
+      action: 'STAFF_ACCOUNT_CREATED',
+      category: 'STAFF',
+      details: `Created staff account for ${newUser.name} with role ${newUser.role}`,
+      performedBy: req.user,
+      ipAddress: req.ip
+    });
+
+    const { passwordHash: _, ...safeUser } = newUser;
+    return res.status(201).json({ success: true, message: 'Staff account provisioned.', user: safeUser });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Failed to create staff account.' });
+  }
+};
+
+export const toggleStaffStatus = (req, res) => {
+  try {
+    const { id } = req.params;
+    const { isActive } = req.body;
+
+    // Disallow deactivating self
+    if (id === req.user.id) {
+      return res.status(400).json({ success: false, message: 'You cannot deactivate your own administrative account.' });
+    }
+
+    const updated = dataStore.updateUser(id, { isActive: Boolean(isActive) });
+    if (!updated) {
+      return res.status(404).json({ success: false, message: 'Staff account not found.' });
+    }
+
+    dataStore.logActivity({
+      action: 'STAFF_STATUS_TOGGLED',
+      category: 'STAFF',
+      details: `Toggled active status of staff ${updated.name} to ${isActive}`,
+      performedBy: req.user,
+      ipAddress: req.ip
+    });
+
+    return res.status(200).json({ success: true, message: 'Staff status updated.' });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Failed to update staff status.' });
+  }
+};
+
+export const getDashboardStats = (req, res) => {
+  try {
+    const stats = dataStore.getStats();
+    return res.status(200).json({ success: true, stats });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Failed to compute dashboard stats.' });
+  }
+};
+
+export const getActivityLogs = (req, res) => {
+  try {
+    const logs = dataStore.getActivityLogs(100);
+    return res.status(200).json({ success: true, count: logs.length, logs });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Failed to retrieve logs.' });
+  }
+};
