@@ -7,27 +7,27 @@ export default function WellnessPage() {
 
   const spaTreatments = [
     {
-      title: 'Pacific Thalassotherapy Mineral Soak & Wrap',
+      title: 'Coastal Thalassotherapy Mineral Soak & Wrap',
       duration: '90 Minutes',
-      price: '$320 (Indicative)',
-      description: 'Heated ocean water rich in trace minerals, followed by an organic California kelp and clay body mask to restore cellular vitality.'
+      price: '₹12,500 (Indicative)',
+      description: 'Heated sea water rich in trace minerals, followed by an organic mineral kelp and clay body mask to restore cellular vitality.'
     },
     {
-      title: 'Azure Signature Restorative Massage',
+      title: 'XYZ Signature Restorative Massage',
       duration: '75 Minutes',
-      price: '$280 (Indicative)',
-      description: 'Long flowing strokes using warm Mediterranean cypress and neroli botanical oils to melt muscular tension and soothe the nervous system.'
+      price: '₹9,500 (Indicative)',
+      description: 'Long flowing strokes using warm botanical oils to melt muscular tension and soothe the nervous system.'
     },
     {
       title: 'Couples Sunset Ocean Pavilion Ritual',
       duration: '120 Minutes',
-      price: '$650 (Indicative)',
-      description: 'Side-by-side aromatherapy massages on a private ocean deck, completed with vintage champagne and fresh berries under the twilight sky.'
+      price: '₹24,000 (Indicative)',
+      description: 'Side-by-side aromatherapy massages on a private ocean deck, completed with vintage refreshments and fresh berries under the twilight sky.'
     },
     {
       title: 'Deep Cryo & Thermal Recovery Journey',
       duration: '60 Minutes',
-      price: '$220 (Indicative)',
+      price: '₹8,000 (Indicative)',
       description: 'Alternating sessions between the Himalayan salt sauna (85°C) and the mineral cold plunge (10°C) for immune activation and lymphatic drainage.'
     }
   ];

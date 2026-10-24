@@ -35,9 +35,9 @@ export default function Navbar() {
     { name: 'Location & Contact', path: '/contact' },
   ];
 
-  const phone = hotelInfo?.contact?.phone || '+1 (858) 555-0199';
-  const phoneRaw = hotelInfo?.contact?.phoneRaw || '+18585550199';
-  const whatsapp = hotelInfo?.contact?.whatsapp || '18585550199';
+  const phone = hotelInfo?.contact?.phone || '+91 98201 23456';
+  const phoneRaw = hotelInfo?.contact?.phoneRaw || '+919820123456';
+  const whatsapp = hotelInfo?.contact?.whatsapp || '919820123456';
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center space-x-6 text-ivory-200">
             <a 
-              href={`https://wa.me/${whatsapp}?text=Hello%20Concierge,%20I%20am%20inquiring%20about%20a%20stay%20at%20The%20Grand%20Azure.`}
+              href={`https://wa.me/${whatsapp}?text=Hello%20Concierge,%20I%20am%20inquiring%20about%20a%20stay%20at%20XYZ%20Hotel.`}
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center space-x-1.5 hover:text-gold-300 transition-colors"
@@ -80,14 +80,14 @@ export default function Navbar() {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 rounded-full border border-gold-400/50 flex items-center justify-center bg-navy-900 group-hover:border-gold-400 transition-colors">
-              <span className="font-serif font-bold text-gold-400 text-lg tracking-widest">GA</span>
+              <span className="font-serif font-bold text-gold-400 text-sm tracking-widest">XYZ</span>
             </div>
             <div>
               <span className="block font-serif text-lg md:text-xl text-white tracking-widest uppercase font-semibold leading-none">
-                The Grand Azure
+                XYZ Hotel
               </span>
               <span className="block text-[10px] tracking-[0.25em] text-gold-400 uppercase mt-1">
-                Resort &bull; Spa &bull; Sanctuary
+                Luxury &bull; Spa &bull; Sanctuary
               </span>
             </div>
           </Link>

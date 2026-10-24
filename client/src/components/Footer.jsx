@@ -7,11 +7,11 @@ export default function Footer() {
   const { hotelInfo } = useHotel();
   const [activeLegalModal, setActiveLegalModal] = useState(null); // 'privacy' | 'terms' | null
 
-  const phone = hotelInfo?.contact?.phone || '+1 (858) 555-0199';
-  const phoneRaw = hotelInfo?.contact?.phoneRaw || '+18585550199';
-  const email = hotelInfo?.contact?.email || 'concierge@grandazureresort.com';
-  const whatsapp = hotelInfo?.contact?.whatsapp || '18585550199';
-  const address = hotelInfo?.address?.full || '420 Ocean Promenade, Azure Cove, CA 92037, USA';
+  const phone = hotelInfo?.contact?.phone || '+91 98201 23456';
+  const phoneRaw = hotelInfo?.contact?.phoneRaw || '+919820123456';
+  const email = hotelInfo?.contact?.email || 'concierge@xyzhotel.com';
+  const whatsapp = hotelInfo?.contact?.whatsapp || '919820123456';
+  const address = hotelInfo?.address?.full || '420 Marine Promenade, Coastal Bay, Goa 403001, India';
 
   return (
     <footer className="bg-navy-950 text-ivory-200 border-t border-navy-800">
@@ -50,14 +50,14 @@ export default function Footer() {
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
             <div className="w-9 h-9 rounded-full border border-gold-400/60 flex items-center justify-center bg-navy-900">
-              <span className="font-serif font-bold text-gold-400 text-sm tracking-wider">GA</span>
+              <span className="font-serif font-bold text-gold-400 text-xs tracking-wider">XYZ</span>
             </div>
             <span className="font-serif text-lg text-white tracking-widest uppercase font-semibold">
-              The Grand Azure
+              XYZ Hotel
             </span>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed">
-            A Pacific sanctuary of timeless elegance, private suites, and restorative coastal wellness. Discreet bespoke service set against California’s ocean cliffs.
+            A coastal sanctuary of timeless elegance, private suites, and restorative wellness. Discreet bespoke service set against India’s most scenic coastal shores.
           </p>
           <div className="pt-2 flex items-center space-x-4">
             <a 
@@ -154,7 +154,7 @@ export default function Footer() {
       <div className="border-t border-navy-900 bg-navy-950 py-6 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p>
-            &copy; {new Date().getFullYear()} The Grand Azure Resort & Spa. All rights reserved. Authentic luxury hospitality.
+            &copy; {new Date().getFullYear()} XYZ Hotel. All rights reserved. Authentic luxury hospitality.
           </p>
           <div className="flex items-center space-x-6">
             <button 
@@ -192,7 +192,7 @@ export default function Footer() {
             <div className="text-xs text-slate-700 space-y-3 leading-relaxed">
               {activeLegalModal === 'privacy' && (
                 <>
-                  <p>The Grand Azure Resort & Spa is committed to safeguarding the privacy and personal information of our guests.</p>
+                  <p>XYZ Hotel is committed to safeguarding the privacy and personal information of our guests.</p>
                   <p>When you submit a booking inquiry through our website, we collect your name, contact information, desired dates, and stay requirements solely to process your booking request and facilitate correspondence.</p>
                   <p>We do not sell, rent, or trade guest personal information to third parties. All inquiries are securely handled in accordance with modern data protection regulations.</p>
                 </>

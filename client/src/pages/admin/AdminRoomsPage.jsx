@@ -26,7 +26,7 @@ export default function AdminRoomsPage() {
     category: 'Deluxe Ocean Suite',
     headline: '',
     description: '',
-    basePrice: 500,
+    basePrice: 18500,
     priceDisplayNote: 'Rates subject to seasonal confirmation',
     bedType: '1 King Bed',
     roomSize: '75 sq m / 800 sq ft',
@@ -66,7 +66,7 @@ export default function AdminRoomsPage() {
       category: 'Deluxe Ocean Suite',
       headline: '',
       description: '',
-      basePrice: 550,
+      basePrice: 22000,
       priceDisplayNote: 'Rates subject to seasonal confirmation',
       bedType: '1 King Bed',
       roomSize: '80 sq m / 860 sq ft',
@@ -250,7 +250,7 @@ export default function AdminRoomsPage() {
                       <div className="text-[11px] text-gold-400/80">{room.category} &bull; {room.roomSize}</div>
                     </td>
                     <td className="py-3.5 px-6 font-mono text-emerald-300 font-bold">
-                      ${room.basePrice} / night
+                      ₹{Number(room.basePrice).toLocaleString('en-IN')} / night
                     </td>
                     <td className="py-3.5 px-6">
                       Max {room.capacity?.totalMax || 3} Guests
@@ -386,7 +386,7 @@ export default function AdminRoomsPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-slate-300 font-medium mb-1">
-                    Base Price ($) *
+                    Base Price (₹) *
                   </label>
                   <input
                     type="number"

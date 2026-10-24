@@ -1,4 +1,4 @@
-# The Grand Azure Resort & Spa — Luxury Website & Booking Inquiry Management System
+# XYZ Hotel — Luxury Website & Booking Inquiry Management System
 
 [![Node.js](https://img.shields.io/badge/Node.js-v20+-green.svg)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-18.3-blue.svg)](https://react.dev/)
@@ -29,7 +29,7 @@
 
 ## 1. Executive Summary & Brand Identity
 
-**The Grand Azure Resort & Spa** is designed to reflect the quiet luxury, architectural refinement, and meticulous hospitality associated with the world's finest boutique resorts (such as Aman, Belmond, and Rosewood).
+**XYZ Hotel** is designed to reflect the quiet luxury, architectural refinement, and meticulous hospitality associated with the world's finest boutique resorts.
 
 - **Authenticity First**: Does not invent fabricated awards, unverified star ratings, or misleading room availability. Clearly marks baseline rates as subject to personal reservation confirmation.
 - **Zero-Public Admin Clues**: The private management portal (`/private-management`) is 100% hidden from all public navigation, footer links, and page markup.
@@ -98,7 +98,7 @@ The interface adheres strictly to the luxury hospitality visual identity guideli
 1. **Top Announcement Bar**: Displays verified accolades, direct click-to-call, and WhatsApp concierge shortcut.
 2. **Sticky Glassmorphic Navigation**: Subtly blurs on scroll, contains zero admin links, fully responsive mobile drawer.
 3. **Hero Section**: Large Pacific cliffside photography, compelling narrative, and an interactive **Quick Date & Guest Inquiry Bar**.
-4. **Heritage & Storytelling**: Authentic copy describing the architectural philosophy of The Grand Azure.
+4. **Heritage & Storytelling**: Authentic copy describing the architectural philosophy of XYZ Hotel.
 5. **Suites & Villas Showcase**: Room cards with photography, category tags, max occupancy, bed type, sq m size, and indicative base price with verification notice.
 6. **Signature Facilities**: Dedicated cards for Infinity Pool, Thalassotherapy Spa, Michelin-caliber Dining, and Chauffeured Yacht / House Cars.
 7. **Culinary Showcase**: The Azure Terrace, Saltwater Grill & Tide Bar, and L’Horizon Sunset Lounge with operating hours, menus preview, and dress code.
@@ -256,8 +256,8 @@ The database is pre-seeded with two authorized accounts for testing:
 
 | Role | Email | Password | Privileges |
 |---|---|---|---|
-| **Super Admin** | `admin@grandazure.com` | `AzureAdmin2026!` | Full administrative access, staff management, CMS, rooms, offers, inquiries |
-| **Manager** | `manager@grandazure.com` | `AzureManager2026!` | Inquiries, room management, promotional offers, website CMS |
+| **Super Admin** | `admin@xyzhotel.com` | `XYZAdmin2026!` | Full administrative access, staff management, CMS, rooms, offers, inquiries |
+| **Manager** | `manager@xyzhotel.com` | `XYZManager2026!` | Inquiries, room management, promotional offers, website CMS |
 
 > **Security Advisory**: Change these default passwords upon deploying to production using the "Change Password" API or database reset.
 

@@ -23,7 +23,7 @@ export class ErrorBoundary extends React.Component {
             <AlertTriangle className="w-7 h-7" />
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
-            The Grand Azure Resort & Spa
+            XYZ Hotel
           </h2>
           <p className="text-slate-400 text-xs sm:text-sm max-w-md mb-6 leading-relaxed">
             We encountered a temporary rendering condition while presenting this sanctuary view. Please refresh to restore the connection.

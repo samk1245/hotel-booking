@@ -5,7 +5,7 @@ import { sendInquiryEmails } from '../services/emailService.js';
 const generateReference = () => {
   const year = new Date().getFullYear();
   const randomChars = Math.random().toString(36).substring(2, 7).toUpperCase();
-  return `AZR-${year}-${randomChars}`;
+  return `XYZ-${year}-${randomChars}`;
 };
 
 export const submitInquiry = async (req, res) => {

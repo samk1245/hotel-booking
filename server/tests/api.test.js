@@ -1,7 +1,7 @@
 import request from 'supertest';
 import app from '../src/server.js';
 
-describe('The Grand Azure Resort API Test Suite', () => {
+describe('XYZ Hotel API Test Suite', () => {
   let adminToken = '';
   let testInquiryRef = '';
   let testInquiryId = '';
@@ -23,10 +23,10 @@ describe('The Grand Azure Resort API Test Suite', () => {
   });
 
   test('GET /api/rooms/:slug returns valid room details', async () => {
-    const res = await request(app).get('/api/rooms/azure-ocean-suite');
+    const res = await request(app).get('/api/rooms/ocean-suite');
     expect(res.status).toBe(200);
     expect(res.body.success).toBe(true);
-    expect(res.body.room.name).toBe('The Azure Ocean Suite');
+    expect(res.body.room.name).toBe('The Ocean Suite');
   });
 
   test('POST /api/inquiries validates required fields and date constraints', async () => {
@@ -60,12 +60,12 @@ describe('The Grand Azure Resort API Test Suite', () => {
     const validPayload = {
       guestName: 'Eleanor Roosevelt',
       email: uniqueEmail,
-      phone: '+1 555 432 9876',
+      phone: '+91 98201 23456',
       checkInDate: tomorrow.toISOString().split('T')[0],
       checkOutDate: dayAfter.toISOString().split('T')[0],
       adults: 2,
       children: 0,
-      preferredRoomName: 'The Azure Ocean Suite',
+      preferredRoomName: 'The Ocean Suite',
       roomCount: 1,
       specialRequests: 'Quiet suite on high floor with ocean sunset view please.',
       consentPrivacy: true
@@ -77,7 +77,7 @@ describe('The Grand Azure Resort API Test Suite', () => {
 
     expect(res.status).toBe(201);
     expect(res.body.success).toBe(true);
-    expect(res.body.inquiryReference).toMatch(/^AZR-\d{4}-[A-Z0-9]+$/);
+    expect(res.body.inquiryReference).toMatch(/^XYZ-\d{4}-[A-Z0-9]+$/);
     testInquiryRef = res.body.inquiryReference;
   });
 
@@ -90,12 +90,12 @@ describe('The Grand Azure Resort API Test Suite', () => {
     const duplicatePayload = {
       guestName: 'Eleanor Roosevelt',
       email: uniqueEmail,
-      phone: '+1 555 432 9876',
+      phone: '+91 98201 23456',
       checkInDate: tomorrow.toISOString().split('T')[0],
       checkOutDate: dayAfter.toISOString().split('T')[0],
       adults: 2,
       children: 0,
-      preferredRoomName: 'The Azure Ocean Suite',
+      preferredRoomName: 'The Ocean Suite',
       roomCount: 1,
       consentPrivacy: true
     };
@@ -118,8 +118,8 @@ describe('The Grand Azure Resort API Test Suite', () => {
     const res = await request(app)
       .post('/api/auth/login')
       .send({
-        email: 'admin@grandazure.com',
-        password: 'AzureAdmin2026!'
+        email: 'admin@xyzhotel.com',
+        password: 'XYZAdmin2026!'
       });
 
     expect(res.status).toBe(200);

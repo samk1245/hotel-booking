@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85"
-          alt="The Grand Azure Resort & Spa Cliffside Infinity Pool"
+          alt="XYZ Hotel Cliffside Infinity Pool & Ocean Grounds"
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/70 to-navy-950/50" />
@@ -49,7 +49,7 @@ export default function Hero() {
             ))}
           </div>
           <span className="text-[11px] uppercase tracking-[0.2em] text-ivory-100 font-medium">
-            Forbes Verified Coastal Sanctuary &bull; California
+            Forbes Verified Coastal Sanctuary &bull; Goa, India
           </span>
         </div>
 
@@ -59,7 +59,7 @@ export default function Hero() {
             Where Coastal Majesty Meets <span className="italic text-gold-300 font-light">Timeless Serenity</span>
           </h1>
           <p className="text-base sm:text-lg text-ivory-200/90 font-light leading-relaxed max-w-2xl">
-            Perched gracefully along the Pacific cliffs, discover an intimate haven of bespoke ocean suites, Michelin-caliber gastronomy, and deeply restorative thalassotherapy rituals.
+            Perched gracefully along pristine coastal shores, discover an intimate haven of bespoke suites, Michelin-caliber gastronomy, and deeply restorative wellness rituals at XYZ Hotel.
           </p>
         </div>
 

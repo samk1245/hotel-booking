@@ -66,11 +66,11 @@ export default function HomePage() {
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">
-              Resting atop the dramatic bluffs of Azure Cove, The Grand Azure Resort & Spa was conceived as an architectural tribute to the natural beauty of the California coastline. Here, handcrafted teak wood, Italian marble, and fragrant Mediterranean gardens frame panoramic ocean vistas.
+              Resting atop the dramatic bluffs of the coast, XYZ Hotel was conceived as an architectural tribute to serene luxury. Here, handcrafted teak wood, Italian marble, and fragrant landscaped gardens frame panoramic ocean vistas.
             </p>
 
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">
-              Whether relaxing in your private heated plunge pool, dining under the stars at The Azure Terrace, or experiencing the restorative benefits of thalassotherapy, our devoted concierges curate every moment with unhurried warmth and genuine discretion.
+              Whether relaxing in your private heated plunge pool, dining under the stars at The Ocean Terrace, or experiencing the restorative benefits of wellness rituals, our devoted concierges curate every moment with unhurried warmth and genuine discretion.
             </p>
 
             <div className="pt-2 flex flex-wrap gap-4 items-center">
@@ -388,7 +388,7 @@ export default function HomePage() {
               Words From Our Discerning Guests
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 mt-2">
-              Read authentic feedback from travelers who have experienced the quiet magic of The Grand Azure.
+              Read authentic feedback from travelers who have experienced the quiet magic of XYZ Hotel.
             </p>
           </div>
 
@@ -511,7 +511,7 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
             <a
-              href={`https://wa.me/${hotelInfo?.contact?.whatsapp || '18585550199'}?text=Hello%20Concierge,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
+              href={`https://wa.me/${hotelInfo?.contact?.whatsapp || '919820123456'}?text=Hello%20Concierge,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs uppercase tracking-wider font-semibold rounded shadow flex items-center justify-center space-x-2 transition-colors"
@@ -521,11 +521,11 @@ export default function HomePage() {
             </a>
 
             <a
-              href={`tel:${hotelInfo?.contact?.phoneRaw || '+18585550199'}`}
+              href={`tel:${hotelInfo?.contact?.phoneRaw || '+919820123456'}`}
               className="w-full sm:w-auto px-6 py-3 bg-navy-800 hover:bg-navy-700 border border-navy-700 text-gold-300 text-xs uppercase tracking-wider font-semibold rounded flex items-center justify-center space-x-2 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>Call: {hotelInfo?.contact?.phone || '+1 (858) 555-0199'}</span>
+              <span>Call: {hotelInfo?.contact?.phone || '+91 98201 23456'}</span>
             </a>
           </div>
         </div>

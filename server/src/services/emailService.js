@@ -19,8 +19,8 @@ if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
 }
 
 export const sendInquiryEmails = async ({ inquiry, hotelInfo }) => {
-  const hotelName = hotelInfo?.name || 'The Grand Azure Resort & Spa';
-  const staffRecipient = process.env.NOTIFICATION_EMAIL || hotelInfo?.contact?.reservationsEmail || 'reservations@grandazureresort.com';
+  const hotelName = hotelInfo?.name || 'XYZ Hotel';
+  const staffRecipient = process.env.NOTIFICATION_EMAIL || hotelInfo?.contact?.reservationsEmail || 'reservations@xyzhotel.com';
   const adminUrl = `${process.env.CLIENT_URL || 'http://localhost:5173'}${process.env.ADMIN_PATH || '/private-management'}`;
 
   // 1. Guest Confirmation Email
@@ -52,11 +52,11 @@ export const sendInquiryEmails = async ({ inquiry, hotelInfo }) => {
       <div class="container">
         <div class="header">
           <h1>${hotelName}</h1>
-          <p>SANCTUARY OF COASTAL TRANQUILITY</p>
+          <p>LUXURY SANCTUARY OF TIMELESS ELEGANCE</p>
         </div>
         <div class="content">
           <h2 style="font-size: 20px; color: #07111E; margin-top: 0;">Dear ${inquiry.guestName},</h2>
-          <p>Thank you for your interest in experiencing The Grand Azure Resort & Spa. We have received your booking inquiry and our reservations concierge is currently reviewing current suite inventory for your requested dates.</p>
+          <p>Thank you for your interest in experiencing ${hotelName}. We have received your booking inquiry and our reservations concierge is currently reviewing current suite inventory for your requested dates.</p>
           
           <div class="ref-box">
             <div class="ref-label">Your Booking Inquiry Reference</div>
@@ -95,14 +95,14 @@ export const sendInquiryEmails = async ({ inquiry, hotelInfo }) => {
             <strong>Important Hospitality Notice:</strong> This email confirms receipt of your booking inquiry. In accordance with luxury boutique standards, accommodations are guaranteed only upon formal reservation verification and confirmation by our front desk team. A dedicated concierge will contact you by phone or email within 2 to 4 hours.
           </div>
 
-          <p>Should you require immediate assistance or wish to provide bespoke arrival requirements, please contact our concierge team at <a href="tel:${hotelInfo?.contact?.phoneRaw || '+18585550199'}" style="color: #C5A880; font-weight: 600;">${hotelInfo?.contact?.phone || '+1 (858) 555-0199'}</a> or via WhatsApp.</p>
+          <p>Should you require immediate assistance or wish to provide bespoke arrival requirements, please contact our concierge team at <a href="tel:${hotelInfo?.contact?.phoneRaw || '+919820123456'}" style="color: #C5A880; font-weight: 600;">${hotelInfo?.contact?.phone || '+91 98201 23456'}</a> or via WhatsApp.</p>
           
           <p style="margin-top: 24px; margin-bottom: 0;">Warmest regards,</p>
           <p style="font-weight: 600; color: #07111E; margin-top: 4px;">The Reservations Concierge<br><span style="font-size: 13px; color: #64748B; font-weight: normal;">${hotelName}</span></p>
         </div>
         <div class="footer">
-          <p>${hotelInfo?.address?.full || '420 Ocean Promenade, Azure Cove, CA 92037'}</p>
-          <p>Phone: ${hotelInfo?.contact?.phone || '+1 (858) 555-0199'} &bull; Email: ${hotelInfo?.contact?.email || 'concierge@grandazureresort.com'}</p>
+          <p>${hotelInfo?.address?.full || '420 Marine Promenade, Coastal Bay, Goa 403001, India'}</p>
+          <p>Phone: ${hotelInfo?.contact?.phone || '+91 98201 23456'} &bull; Email: ${hotelInfo?.contact?.email || 'concierge@xyzhotel.com'}</p>
         </div>
       </div>
     </body>
@@ -147,14 +147,14 @@ export const sendInquiryEmails = async ({ inquiry, hotelInfo }) => {
   if (transporter) {
     try {
       await transporter.sendMail({
-        from: `"${hotelName}" <${process.env.SMTP_FROM || 'concierge@grandazureresort.com'}>`,
+        from: `"${hotelName}" <${process.env.SMTP_FROM || 'concierge@xyzhotel.com'}>`,
         to: inquiry.email,
         subject: `Booking Inquiry Acknowledgment [${inquiry.inquiryReference}] - ${hotelName}`,
         html: guestHtml
       });
 
       await transporter.sendMail({
-        from: `"${hotelName} Alerts" <${process.env.SMTP_FROM || 'alerts@grandazureresort.com'}>`,
+        from: `"${hotelName} Alerts" <${process.env.SMTP_FROM || 'alerts@xyzhotel.com'}>`,
         to: staffRecipient,
         subject: `[NEW INQUIRY] ${inquiry.inquiryReference} - ${inquiry.guestName} (${inquiry.checkInDate})`,
         html: staffHtml

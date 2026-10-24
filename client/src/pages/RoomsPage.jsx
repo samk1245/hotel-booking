@@ -28,7 +28,7 @@ export default function RoomsPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <span className="text-[11px] uppercase tracking-[0.25em] text-gold-400 font-semibold block mb-2">
-            The Grand Azure Sanctuary
+            XYZ Hotel Sanctuary
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal">
             Suites, Penthouses & Private Villas

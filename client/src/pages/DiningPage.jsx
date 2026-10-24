@@ -80,7 +80,7 @@ export default function DiningPage() {
 
                 <div className="pt-2">
                   <a
-                    href={`tel:${hotelInfo?.contact?.phoneRaw || '+18585550199'}`}
+                    href={`tel:${hotelInfo?.contact?.phoneRaw || '+919820123456'}`}
                     className="inline-flex items-center space-x-2 px-5 py-2.5 bg-navy-950 text-gold-300 rounded text-xs uppercase tracking-wider font-semibold hover:bg-navy-900 transition-colors"
                   >
                     <span>Reserve a Table &bull; Front Desk</span>

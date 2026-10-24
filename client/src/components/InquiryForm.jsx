@@ -238,7 +238,7 @@ export default function InquiryForm({ initialRoom = null, onSuccess = null }) {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="e.g. +1 (858) 555-0199"
+              placeholder="e.g. +91 98201 23456"
               required
               className="w-full bg-ivory-50 border border-slate-300 rounded-md px-3.5 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-gold-500"
             />
@@ -340,7 +340,7 @@ export default function InquiryForm({ initialRoom = null, onSuccess = null }) {
             <option value="">Any Available Category (Concierge Recommended)</option>
             {rooms.map(room => (
               <option key={room._id} value={room._id}>
-                {room.name} — ({room.category}, from ${room.basePrice}/night)
+                {room.name} — ({room.category}, from ₹{room.basePrice?.toLocaleString('en-IN')}/night)
               </option>
             ))}
           </select>
@@ -384,7 +384,7 @@ export default function InquiryForm({ initialRoom = null, onSuccess = null }) {
             className="mt-0.5 h-4 w-4 rounded border-slate-300 text-gold-600 focus:ring-gold-500"
           />
           <label htmlFor="consentPrivacy" className="text-xs text-slate-600 leading-normal">
-            I consent to The Grand Azure Resort & Spa processing my contact details to evaluate suite availability, dispatch my booking inquiry acknowledgment, and communicate directly regarding this stay in accordance with the hotel’s privacy notice. *
+            I consent to XYZ Hotel processing my contact details to evaluate suite availability, dispatch my booking inquiry acknowledgment, and communicate directly regarding this stay in accordance with the hotel’s privacy notice. *
           </label>
         </div>
 

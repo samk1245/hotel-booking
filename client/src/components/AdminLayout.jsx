@@ -51,11 +51,11 @@ export default function AdminLayout() {
         {/* Brand Header */}
         <div className="p-6 border-b border-navy-800/80 flex items-center space-x-3">
           <div className="w-9 h-9 rounded-full border border-gold-400 flex items-center justify-center bg-navy-900">
-            <span className="font-serif font-bold text-gold-400 text-sm tracking-widest">GA</span>
+            <span className="font-serif font-bold text-gold-400 text-xs tracking-wider">XYZ</span>
           </div>
           <div>
             <span className="block font-serif text-sm text-white uppercase tracking-wider font-bold">
-              The Grand Azure
+              XYZ Hotel
             </span>
             <span className="block text-[10px] tracking-widest text-gold-400 uppercase font-mono">
               Management Portal

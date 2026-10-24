@@ -1,67 +1,77 @@
 import bcrypt from 'bcryptjs';
 import { dataStore } from '../models/dataStore.js';
 
-export const seedData = async () => {
+export const seedData = async (force = false) => {
   dataStore.init();
+
+  if (force) {
+    dataStore.state = {
+      rooms: [],
+      inquiries: [],
+      users: [],
+      content: {},
+      offers: [],
+      activityLogs: []
+    };
+  }
 
   // 1. Seed Admin Accounts
   const existingUsers = dataStore.getUsers();
   if (existingUsers.length === 0) {
     console.log('[Seed] Seeding authorized administrative accounts...');
-    const superAdminPasswordHash = await bcrypt.hash('AzureAdmin2026!', 10);
-    const managerPasswordHash = await bcrypt.hash('AzureManager2026!', 10);
+    const superAdminPasswordHash = await bcrypt.hash('XYZAdmin2026!', 10);
+    const managerPasswordHash = await bcrypt.hash('XYZManager2026!', 10);
 
     dataStore.createUser({
-      name: 'Elena Rostova',
-      email: 'admin@grandazure.com',
+      name: 'Aditya Sharma',
+      email: 'admin@xyzhotel.com',
       passwordHash: superAdminPasswordHash,
       role: 'superadmin',
       isActive: true
     });
 
     dataStore.createUser({
-      name: 'Marcus Vance',
-      email: 'manager@grandazure.com',
+      name: 'Pooja Verma',
+      email: 'manager@xyzhotel.com',
       passwordHash: managerPasswordHash,
       role: 'manager',
       isActive: true
     });
   }
 
-  // 2. Seed Luxury Rooms
+  // 2. Seed Luxury Rooms (with INR Prices)
   const existingRooms = dataStore.getRooms();
   if (existingRooms.length === 0) {
-    console.log('[Seed] Seeding verified room suites & villas...');
+    console.log('[Seed] Seeding verified room suites & villas with INR rates...');
     const luxuryRooms = [
       {
-        name: 'The Azure Ocean Suite',
-        slug: 'azure-ocean-suite',
+        name: 'The Ocean Suite',
+        slug: 'ocean-suite',
         category: 'Deluxe Ocean Suite',
-        headline: 'Sweeping Pacific Horizons & Private Sunset Terrace',
-        description: 'Perched along the azure coastline, this sanctuary features expansive floor-to-ceiling glass windows framing endless ocean vistas. Decorated in soothing tones of ivory, brushed brass, and teak wood, the suite provides a hand-carved king bed, a freestanding deep soaking tub overlooking the sea, and an expansive private terrace with sun loungers.',
-        basePrice: 720,
-        priceDisplayNote: 'Rates subject to seasonal confirmation by our reservations team',
+        headline: 'Sweeping Arabian Sea Horizons & Private Sunset Terrace',
+        description: 'Perched along the serene coastal shoreline, this sanctuary features expansive floor-to-ceiling glass windows framing endless sea vistas. Decorated in soothing tones of warm ivory, brushed brass, and teak wood, the suite provides a hand-carved king bed, a freestanding deep soaking tub overlooking the sea, and an expansive private terrace with sun loungers.',
+        basePrice: 45000,
+        priceDisplayNote: 'Rates subject to seasonal confirmation by our reservations desk',
         capacity: { adults: 2, children: 1, totalMax: 3 },
         bedType: '1 Custom King Bed with Organic Linen',
         roomSize: '85 sq m / 915 sq ft',
-        view: 'Panoramic Pacific Ocean & Sunset View',
+        view: 'Panoramic Ocean & Sunset View',
         floor: 'Upper Levels (Floors 5 – 7)',
         amenities: [
           'Oceanfront Private Terrace',
-          'Freestanding Marble Soaking Tub',
+          'Freestanding Italian Marble Soaking Tub',
           'Aromatherapy Rainfall Shower',
           'Bespoke Bang & Olufsen Sound System',
           'Complimentary High-Speed Wi-Fi 6',
-          'Sommelier Curated Wine & Mini-Bar',
+          'Curated Refreshment Bar & Nespresso Machine',
           '24-Hour In-Suite Dining & Butler Call',
-          'Nespresso Artisan Coffee Machine',
-          'Diptyque Paris Luxury Bath Amenities',
-          'Plush Egyptian Cotton Robes & Slippers'
+          'Kama Ayurveda Luxury Bath Amenities',
+          'Plush Cotton Robes & Slippers'
         ],
         images: [
           {
             url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80',
-            caption: 'Master bedroom with panoramic Pacific ocean vista',
+            caption: 'Master bedroom with panoramic ocean vista',
             isPrimary: true,
             order: 1
           },
@@ -91,25 +101,24 @@ export const seedData = async () => {
         name: 'Royal Horizon Penthouse',
         slug: 'royal-horizon-penthouse',
         category: 'Royal Penthouse',
-        headline: 'Crown Jewel of The Grand Azure with 360° Coastline Views',
+        headline: 'Crown Jewel of XYZ Hotel with 360° Panoramic Coastline Views',
         description: 'An architectural tour de force occupying the top level of the resort. Features two expansive master suites, a formal dining salon, a private infinity edge plunge pool on the wraparound veranda, and dedicated around-the-clock butler service. Designed for discerning travelers seeking peerless privacy and grandeur.',
-        basePrice: 1450,
+        basePrice: 95000,
         priceDisplayNote: 'Exclusive suite rate; subject to private reservation consultation',
         capacity: { adults: 4, children: 2, totalMax: 6 },
         bedType: '2 California King Beds in Separate Wings',
         roomSize: '160 sq m / 1,720 sq ft',
         view: '360° Ocean, Coastal Cliffs & Twilight Skyline',
-        floor: 'Private Penthouse Level (8th Floor, Direct Elevator)',
+        floor: 'Private Penthouse Level (Direct Keycard Elevator)',
         amenities: [
           'Private Heated Veranda Plunge Pool',
-          'Dedicated 24/7 Private Butler',
+          'Dedicated 24/7 Private Butler Service',
           'Private Direct Keycard Elevator Access',
           'Two Master Bathrooms with Calacatta Marble',
-          'Fireplace in Primary Salon',
-          'Chef Prep Pantry & Wine Cellar Refrigerator',
-          'Complimentary Daily Chauffeur Transfer',
-          'Welcome Vintage Dom Pérignon & Caviar Service',
-          'Molton Brown Royal Edition Toiletries',
+          'Living Room Fireplace & Butler Pantry',
+          'Complimentary Luxury Chauffeur Transfer',
+          'Welcome Champagne & High Tea Service',
+          'Forest Essentials Royal Edition Toiletries',
           'Biometric In-Room Safe'
         ],
         images: [
@@ -142,12 +151,12 @@ export const seedData = async () => {
         displayOrder: 2
       },
       {
-        name: 'Azure Garden Sanctuary Villa',
+        name: 'Garden Sanctuary Villa',
         slug: 'garden-sanctuary-villa',
         category: 'Azure Garden Villa',
         headline: 'Botanical Seclusion with Private Zen Courtyard',
-        description: 'Tucked within the resort’s lush coastal botanical gardens, our Sanctuary Villa offers absolute tranquility. Enjoy a secluded sun-dappled courtyard, an outdoor stone rain shower beneath tropical frangipani trees, and serene Japanese-inspired architecture crafted from warm cedar and stone.',
-        basePrice: 890,
+        description: 'Tucked within the resort’s lush coastal botanical gardens, our Sanctuary Villa offers absolute tranquility. Enjoy a secluded sun-dappled courtyard, an outdoor stone rain shower beneath tropical frangipani trees, and serene architecture crafted from warm cedar and stone.',
+        basePrice: 32000,
         priceDisplayNote: 'Rates subject to seasonal availability confirmation',
         capacity: { adults: 2, children: 1, totalMax: 3 },
         bedType: '1 Handcrafted Teak King Bed',
@@ -157,14 +166,12 @@ export const seedData = async () => {
         amenities: [
           'Enclosed Private Garden Courtyard',
           'Outdoor Lava Stone Rain Shower',
-          'Deep Copper Japanese Soaking Tub',
+          'Deep Copper Soaking Tub',
           'Custom Yoga & Meditation Deck',
-          'In-Villa Ayurvedic Tea Ceremony Set',
+          'In-Villa Ayurvedic Herbal Tea Ceremony Set',
           'Complimentary Daily Spa Hydrotherapy Access',
-          'Bicycle Fleet for Coastal Exploring',
-          'Aveda Botanical Herbal Toiletries',
-          'Individual Climate Zones & Fresh Ocean Air Doors',
-          'Soundproof Solid Wood Construction'
+          'Organic Botanical Toiletries',
+          'Individual Climate Zones & Fresh Ocean Air Doors'
         ],
         images: [
           {
@@ -193,9 +200,9 @@ export const seedData = async () => {
         name: 'Executive Coastal Suite',
         slug: 'executive-coastal-suite',
         category: 'Executive Suite',
-        headline: 'Refined Contemporary Comfort with Marina & Cove Views',
+        headline: 'Refined Contemporary Comfort with Marina & Bay Views',
         description: 'A sophisticated sanctuary balancing work and restorative leisure. Features an ergonomic solid walnut work desk, high-speed encrypted Wi-Fi, an inviting living room, and a generous bedroom overlooking the yacht marina and rugged cliffs.',
-        basePrice: 540,
+        basePrice: 22000,
         priceDisplayNote: 'Rates subject to reservation team verification',
         capacity: { adults: 2, children: 0, totalMax: 2 },
         bedType: '1 Luxury King Bed with Hypoallergenic Down Pillows',
@@ -209,8 +216,7 @@ export const seedData = async () => {
           'Walk-in Dressing Wardrobe',
           'Smart Environmental Controls & Blackout Curtains',
           'Complimentary Dry Cleaning (2 items/day)',
-          'Espresso Machine & Premium Loose Leaf Teas',
-          'Acqua di Parma Toiletries'
+          'Espresso Machine & Premium Loose Leaf Teas'
         ],
         images: [
           {
@@ -236,12 +242,12 @@ export const seedData = async () => {
         displayOrder: 4
       },
       {
-        name: 'Pacific Sunrise Villa',
-        slug: 'pacific-sunrise-villa',
+        name: 'Sunrise Bay Villa',
+        slug: 'sunrise-bay-villa',
         category: 'Presidential Villa',
         headline: 'Oceanfront Estate with Private Plunge Pool & Sun Deck',
-        description: 'Wake up to golden California dawns. This standalone villa provides unprecedented closeness to the surf, featuring dual master suites, private heated plunge pool, dedicated outdoor kitchen, and an expansive lawn kissing the coastline path.',
-        basePrice: 1200,
+        description: 'Wake up to golden coastal dawns. This standalone villa provides unprecedented closeness to the surf, featuring dual master suites, private heated plunge pool, dedicated outdoor kitchen, and an expansive lawn kissing the coastline path.',
+        basePrice: 65000,
         priceDisplayNote: 'Rates subject to seasonal confirmation',
         capacity: { adults: 4, children: 2, totalMax: 6 },
         bedType: '2 King Beds with Cloud Mattresses',
@@ -253,7 +259,7 @@ export const seedData = async () => {
           'Outdoor Kitchen & Alfresco Dining Cabana',
           'Direct Access to Coastal Pathway',
           'Dual En-Suite Bathrooms with Rain Showers',
-          'Sub-Zero Wine Storage & Bar Cart',
+          'Wine Storage & Artisan Bar Cart',
           'Nightly Fire Pit Turndown Service',
           'Full Concierge Pre-Stocking Service'
         ],
@@ -281,12 +287,12 @@ export const seedData = async () => {
         displayOrder: 5
       },
       {
-        name: 'The Azure Deluxe Sanctuary',
-        slug: 'azure-deluxe-sanctuary',
+        name: 'The Deluxe Sanctuary',
+        slug: 'deluxe-sanctuary',
         category: 'Superior Room',
         headline: 'Classic Elegance & Warm Hospitality',
         description: 'An intimate retreat providing unmatched comfort. Thoughtfully appointed with natural hardwood floors, custom woven textiles, a spa-inspired rain shower, and a private Juliet balcony overlooking our fragrant herb and rose gardens.',
-        basePrice: 420,
+        basePrice: 14500,
         priceDisplayNote: 'Rates subject to seasonal confirmation',
         capacity: { adults: 2, children: 0, totalMax: 2 },
         bedType: '1 Plush King or 2 Queen Beds',
@@ -295,7 +301,7 @@ export const seedData = async () => {
         floor: 'Levels 1 – 3',
         amenities: [
           'Juliet Balcony overlooking Gardens',
-          'Spa Rain Shower & Italian Stone Finishes',
+          'Spa Rain Shower & Natural Stone Finishes',
           'Smart HDTV with Streaming Support',
           'Fine Linen and Feather Duvet',
           'In-Room Safe & Refreshment Center',
@@ -326,22 +332,22 @@ export const seedData = async () => {
   // 3. Seed Promotional Offers
   const existingOffers = dataStore.getOffers(false);
   if (existingOffers.length === 0) {
-    console.log('[Seed] Seeding promotional packages...');
+    console.log('[Seed] Seeding promotional packages in INR...');
     const initialOffers = [
       {
         title: 'Timeless Escape: 4th Night Complimentary',
-        subtitle: 'Extend your sanctuary by the Pacific',
-        description: 'Immerse yourself in coastal tranquility. Book a consecutive three-night stay in any of our Ocean Suites or Private Villas, and receive the fourth night with our compliments, including daily gourmet champagne breakfast for two.',
+        subtitle: 'Extend your sanctuary by the coastline',
+        description: 'Immerse yourself in coastal tranquility. Book a consecutive three-night stay in any of our Ocean Suites or Private Villas, and receive the fourth night with our compliments, including daily gourmet breakfast for two.',
         tag: 'Extended Stay Privilege',
         discountText: 'Stay 4, Pay 3',
         validFrom: '2026-10-01',
         validTo: '2026-12-20',
-        promoCode: 'AZURE4TH',
+        promoCode: 'XYZ4TH',
         image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80',
         perks: [
           'Fourth night complimentary on eligible suites',
-          'Daily champagne breakfast for two at The Azure Terrace',
-          'Welcome sommelier reserve bottle in suite',
+          'Daily gourmet breakfast for two at The Terrace',
+          'Welcome reserve refreshments in suite',
           'Guaranteed 14:00 late check-out'
         ],
         isActive: true,
@@ -350,9 +356,9 @@ export const seedData = async () => {
       {
         title: 'Couples Sanctuary & Spa Ritual',
         subtitle: 'Rejuvenate together in holistic serenity',
-        description: 'An idyllic romantic retreat featuring a 90-minute bespoke Thalassotherapy couples massage, followed by a private sunset cabana dinner paired with biodynamic coastal wines curated by Chef Laurent.',
+        description: 'An idyllic romantic retreat featuring a 90-minute bespoke couples massage, followed by a private sunset cabana dinner paired with estate wines curated by our master chef.',
         tag: 'Romance & Wellness',
-        discountText: '$250 Spa Credit Included',
+        discountText: '₹15,000 Spa Credit Included',
         validFrom: '2026-10-15',
         validTo: '2027-04-30',
         promoCode: 'ROMANCE26',
@@ -360,7 +366,7 @@ export const seedData = async () => {
         perks: [
           '90-Minute Signature Couples Massage Ritual',
           'Three-course candlelit dinner in private ocean cabana',
-          'Chilled vintage champagne & chocolate truffles upon arrival',
+          'Chilled welcome refreshments upon arrival',
           'Daily access to mineral thermal pools'
         ],
         isActive: true,
@@ -390,222 +396,219 @@ export const seedData = async () => {
     initialOffers.forEach(o => dataStore.createOffer(o));
   }
 
-  // 4. Seed Hotel Website Content (Editable via Admin Dashboard)
-  const existingContent = dataStore.getContent();
-  if (!existingContent.hotel_info) {
-    console.log('[Seed] Seeding verified hotel content & copy...');
-    dataStore.setContent('hotel_info', {
-      name: 'The Grand Azure Resort & Spa',
-      tagline: 'A Coastal Sanctuary of Timeless Elegance',
-      shortDescription: 'Nestled between dramatic ocean cliffs and sun-drenched Pacific waters, The Grand Azure offers an exquisite blend of refined architecture, Michelin-caliber gastronomy, and deeply restorative wellness retreats.',
-      address: {
-        street: '420 Ocean Promenade',
-        city: 'Azure Cove, La Jolla',
-        state: 'California',
-        postalCode: '92037',
-        country: 'United States of America',
-        full: '420 Ocean Promenade, Azure Cove, CA 92037, USA'
-      },
-      coordinates: {
-        lat: 32.8427,
-        lng: -117.2734
-      },
-      contact: {
-        phone: '+1 (858) 555-0199',
-        phoneRaw: '+18585550199',
-        email: 'concierge@grandazureresort.com',
-        reservationsEmail: 'reservations@grandazureresort.com',
-        whatsapp: '+18585550199',
-        whatsappFormatted: '+1 (858) 555-0199',
-        receptionHours: '24 Hours Daily',
-        conciergeHours: '06:00 – 23:00 Daily'
-      },
-      policies: {
-        checkInTime: '15:00',
-        checkOutTime: '11:00',
-        earlyCheckInNote: 'Early check-in subject to availability upon arrival; please notify the concierge.',
-        cancellationPolicy: 'Inquiries do not incur charges. Confirmed reservations offer complimentary cancellation up to 48 hours prior to arrival date unless specified otherwise in promotional terms.',
-        petPolicy: 'Well-mannered dogs up to 35 lbs welcomed in designated Garden Villas with dedicated pet concierge kit (fee applies).',
-        smokingPolicy: 'The Grand Azure is a 100% smoke-free and vape-free sanctuary across all guest rooms, suites, and public indoor spaces.'
-      }
-    });
+  // 4. Seed Hotel Website Content (XYZ Hotel & Indian Numbers)
+  console.log('[Seed] Seeding XYZ Hotel verified content & copy...');
+  dataStore.setContent('hotel_info', {
+    name: 'XYZ Hotel',
+    tagline: 'A Luxury Sanctuary of Timeless Elegance',
+    shortDescription: 'Nestled along the pristine coastal shores, XYZ Hotel offers an exquisite blend of refined architecture, Michelin-caliber gastronomy, and deeply restorative wellness retreats.',
+    address: {
+      street: '420 Marine Promenade',
+      city: 'Coastal Bay, Goa',
+      state: 'Goa',
+      postalCode: '403001',
+      country: 'India',
+      full: '420 Marine Promenade, Coastal Bay, Goa 403001, India'
+    },
+    coordinates: {
+      lat: 15.2993,
+      lng: 73.9634
+    },
+    contact: {
+      phone: '+91 98201 23456',
+      phoneRaw: '+919820123456',
+      email: 'concierge@xyzhotel.com',
+      reservationsEmail: 'reservations@xyzhotel.com',
+      whatsapp: '919820123456',
+      whatsappFormatted: '+91 98201 23456',
+      receptionHours: '24 Hours Daily',
+      conciergeHours: '06:00 – 23:00 Daily'
+    },
+    policies: {
+      checkInTime: '15:00',
+      checkOutTime: '11:00',
+      earlyCheckInNote: 'Early check-in subject to availability upon arrival; please notify the concierge.',
+      cancellationPolicy: 'Inquiries do not incur charges. Confirmed reservations offer complimentary cancellation up to 48 hours prior to arrival date unless specified otherwise in promotional terms.',
+      petPolicy: 'Well-mannered dogs welcomed in designated Garden Villas with dedicated pet concierge kit (fee applies).',
+      smokingPolicy: 'XYZ Hotel is a 100% smoke-free and vape-free sanctuary across all guest rooms, suites, and public indoor spaces.'
+    }
+  });
 
-    dataStore.setContent('dining', [
-      {
-        name: 'The Azure Terrace',
-        cuisine: 'Coastal Mediterranean & Pacific Seafood',
-        chef: 'Executive Chef Laurent Fournier',
-        description: 'An open-air dining spectacle suspended above the Pacific waves. Indulge in line-caught sea bass, hand-rolled saffron pasta, and an extensive cellar of biodynamic vintages.',
-        hours: 'Breakfast 07:00 – 11:00 | Dinner 18:00 – 22:30',
-        image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
-        dressCode: 'Resort Elegant (Collared shirts for gentlemen; no athletic attire)'
-      },
-      {
-        name: 'Saltwater Grill & Tide Bar',
-        cuisine: 'Artisan Wood-Fired Grilling & Raw Oyster Bar',
-        chef: 'Chef de Cuisine Kenji Tanaka',
-        description: 'Directly alongside the ocean tide pools. Savor freshly shucked Pacific oysters, charcoal-roasted king prawns, and A5 Wagyu striploin alongside chilled California crisp whites.',
-        hours: 'Lunch 12:00 – 16:30 | Sunset Cocktails 16:30 – 21:00',
-        image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
-        dressCode: 'Smart Casual'
-      },
-      {
-        name: 'L’Horizon Sunset Lounge',
-        cuisine: 'Botanical Mixology & Caviar Tasting',
-        chef: 'Master Mixologist Camille Dupuis',
-        description: 'Gather at golden hour for rare single-barrel spirits, elderflower infusions, and light evening tapas accompanied by live acoustic cello and jazz.',
-        hours: 'Daily 16:00 – 01:00',
-        image: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80',
-        dressCode: 'Resort Evening'
-      }
-    ]);
+  dataStore.setContent('dining', [
+    {
+      name: 'The Terrace Restaurant',
+      cuisine: 'Coastal Mediterranean & Fresh Seafood',
+      chef: 'Executive Chef Laurent Fournier',
+      description: 'An open-air dining spectacle suspended above the sea waves. Indulge in line-caught sea bass, hand-rolled saffron pasta, and an extensive cellar of biodynamic vintages.',
+      hours: 'Breakfast 07:00 – 11:00 | Dinner 18:00 – 22:30',
+      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+      dressCode: 'Resort Elegant (Collared shirts for gentlemen; no athletic attire)'
+    },
+    {
+      name: 'Saltwater Grill & Tide Bar',
+      cuisine: 'Artisan Wood-Fired Grilling & Coastal Seafood',
+      chef: 'Chef de Cuisine Kenji Tanaka',
+      description: 'Directly alongside the ocean tide pools. Savor freshly prepared catch of the day, charcoal-roasted king prawns, and tender cuts alongside chilled wines and beverages.',
+      hours: 'Lunch 12:00 – 16:30 | Sunset Cocktails 16:30 – 21:00',
+      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
+      dressCode: 'Smart Casual'
+    },
+    {
+      name: 'L’Horizon Sunset Lounge',
+      cuisine: 'Botanical Mixology & Small Plates',
+      chef: 'Master Mixologist Camille Dupuis',
+      description: 'Gather at golden hour for single-barrel spirits, botanical infusions, and light evening tapas accompanied by live acoustic music.',
+      hours: 'Daily 16:00 – 01:00',
+      image: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80',
+      dressCode: 'Resort Evening'
+    }
+  ]);
 
-    dataStore.setContent('wellness', {
-      title: 'The Azure Ocean Spa & Wellness Sanctuary',
-      tagline: 'Ancient Thalassotherapy Meets Modern Restorative Science',
-      description: 'Draw upon the healing vitality of the Pacific. Spanning 15,000 square feet, our spa offers heated mineral pools, Himalayan salt saunas, open-air meditation decks, and custom restorative treatments curated by master practitioners.',
-      features: [
-        'Heated Ocean Mineral Thalassotherapy Pools',
-        'Traditional Cedarwood & Herbal Steam Saunas',
-        'Private Sunset Yoga & Sound Bath Pavilions',
-        'Cold-Plunge Cryo-Therapy Suites',
-        'Biologique Recherche & Organic Botanical Treatments',
-        'Technogym Olympic-Grade Fitness Center with Coastal Views'
-      ],
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80'
-    });
+  dataStore.setContent('wellness', {
+    title: 'The XYZ Ocean Spa & Wellness Sanctuary',
+    tagline: 'Ancient Thalassotherapy Meets Modern Restorative Science',
+    description: 'Draw upon the healing vitality of the sea. Spanning 15,000 square feet, our spa offers heated mineral pools, Himalayan salt saunas, open-air meditation decks, and custom restorative treatments curated by master practitioners.',
+    features: [
+      'Heated Ocean Mineral Hydrotherapy Pools',
+      'Traditional Cedarwood & Herbal Steam Saunas',
+      'Private Sunset Yoga & Sound Bath Pavilions',
+      'Cold-Plunge Cryo-Therapy Suites',
+      'Biologique Recherche & Organic Botanical Treatments',
+      'Modern Fitness Center with Coastal Views'
+    ],
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80'
+  });
 
-    dataStore.setContent('faqs', [
-      {
-        question: 'What is the procedure for booking inquiries through this website?',
-        answer: 'Submitting a booking inquiry sends your desired dates and room preferences directly to our private reservations concierge. Our team personally reviews real-time suite inventory and contacts you via phone or email within 2 to 4 hours with guaranteed availability and a customized reservation confirmation.'
-      },
-      {
-        question: 'Are published room rates all-inclusive or subject to confirmation?',
-        answer: 'All published prices on this website represent authorized baseline rates. Final total pricing, including seasonal adjustments, occupancy taxes, and any requested bespoke additions, is formally provided and confirmed by our reservation team before any commitment is finalized.'
-      },
-      {
-        question: 'What are the official check-in and check-out times?',
-        answer: 'Check-in commences at 15:00 (3:00 PM), and check-out is at 11:00 AM (12:00 PM for Penthouse & Villa guests). Early check-in or late check-out may be arranged in advance with our concierge team based on availability.'
-      },
-      {
-        question: 'Do you offer private airport transfers and chauffeur services?',
-        answer: 'Yes. Our private fleet of electric luxury house cars provides complimentary transfers within a 5-mile local radius. Private airport transfers from San Diego International (SAN) and Los Angeles (LAX) can be scheduled with our concierge.'
-      },
-      {
-        question: 'What is your cancellation and modification policy?',
-        answer: 'Booking inquiries carry zero financial obligation. Once a reservation is confirmed with our front desk, complimentary cancellation is available up to 48 hours prior to arrival date (7 days for Penthouse bookings), after which the first night deposit applies.'
-      },
-      {
-        question: 'Can dietary restrictions and bespoke dining requests be accommodated?',
-        answer: 'Absolutely. Our culinary teams across The Azure Terrace and Saltwater Grill regularly prepare personalized gluten-free, vegan, halal, and allergen-safe tasting menus. Please note any dietary preferences in your booking inquiry.'
-      }
-    ]);
+  dataStore.setContent('faqs', [
+    {
+      question: 'What is the procedure for booking inquiries through this website?',
+      answer: 'Submitting a booking inquiry sends your desired dates and room preferences directly to our private reservations concierge. Our team personally reviews real-time suite inventory and contacts you via phone or email within 2 to 4 hours with guaranteed availability and a customized reservation confirmation.'
+    },
+    {
+      question: 'Are published room rates all-inclusive or subject to confirmation?',
+      answer: 'All published prices on this website represent authorized baseline rates in Indian Rupees (₹). Final total pricing, including seasonal adjustments, applicable taxes (GST), and any requested bespoke additions, is formally provided and confirmed by our reservation team before any commitment is finalized.'
+    },
+    {
+      question: 'What are the official check-in and check-out times?',
+      answer: 'Check-in commences at 15:00 (3:00 PM), and check-out is at 11:00 AM (12:00 PM for Penthouse & Villa guests). Early check-in or late check-out may be arranged in advance with our concierge team based on availability.'
+    },
+    {
+      question: 'Do you offer private airport transfers and chauffeur services?',
+      answer: 'Yes. Our private fleet of luxury house cars provides complimentary transfers within a 5-mile local radius. Private airport transfers from the nearest international airport can be scheduled with our concierge.'
+    },
+    {
+      question: 'What is your cancellation and modification policy?',
+      answer: 'Booking inquiries carry zero financial obligation. Once a reservation is confirmed with our front desk, complimentary cancellation is available up to 48 hours prior to arrival date (7 days for Penthouse bookings), after which the first night deposit applies.'
+    },
+    {
+      question: 'Can dietary restrictions and bespoke dining requests be accommodated?',
+      answer: 'Absolutely. Our culinary teams across The Terrace Restaurant and Saltwater Grill regularly prepare personalized Jain, vegetarian, vegan, and allergen-safe menus. Please note any dietary preferences in your booking inquiry.'
+    }
+  ]);
 
-    dataStore.setContent('gallery', [
-      {
-        id: 'gal-1',
-        title: 'Infinity Oceanfront Pool at Sunset',
-        category: 'Resort',
-        url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Heated cliffside infinity pool overlooking the Pacific sunset'
-      },
-      {
-        id: 'gal-2',
-        title: 'The Azure Ocean Suite Master Bedroom',
-        category: 'Rooms',
-        url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Panoramic ocean view bedroom with custom king bed'
-      },
-      {
-        id: 'gal-3',
-        title: 'The Azure Terrace Fine Dining',
-        category: 'Dining',
-        url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Candlelit dining overlooking the evening coastal surf'
-      },
-      {
-        id: 'gal-4',
-        title: 'Thalassotherapy & Mineral Spa',
-        category: 'Wellness',
-        url: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Calming hydrotherapy mineral pool and treatment suites'
-      },
-      {
-        id: 'gal-5',
-        title: 'Royal Penthouse Wraparound Veranda',
-        category: 'Rooms',
-        url: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Private open-air lounge and heated plunge pool'
-      },
-      {
-        id: 'gal-6',
-        title: 'Zen Botanical Courtyard Villa',
-        category: 'Rooms',
-        url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Fragrant tropical greenery surrounding private villa retreat'
-      },
-      {
-        id: 'gal-7',
-        title: 'L’Horizon Sunset Cocktail Lounge',
-        category: 'Dining',
-        url: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Artisan mixology and live jazz lounge'
-      },
-      {
-        id: 'gal-8',
-        title: 'Private Cliffside Ocean Walkway',
-        category: 'Resort',
-        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80',
-        caption: 'Secluded seaside path directly accessible to hotel guests'
-      }
-    ]);
+  dataStore.setContent('gallery', [
+    {
+      id: 'gal-1',
+      title: 'Infinity Oceanfront Pool at Sunset',
+      category: 'Resort',
+      url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Heated cliffside infinity pool overlooking the sunset'
+    },
+    {
+      id: 'gal-2',
+      title: 'The Ocean Suite Master Bedroom',
+      category: 'Rooms',
+      url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Panoramic ocean view bedroom with custom king bed'
+    },
+    {
+      id: 'gal-3',
+      title: 'The Terrace Fine Dining',
+      category: 'Dining',
+      url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Candlelit dining overlooking the evening coastal surf'
+    },
+    {
+      id: 'gal-4',
+      title: 'Thalassotherapy & Mineral Spa',
+      category: 'Wellness',
+      url: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Calming hydrotherapy mineral pool and treatment suites'
+    },
+    {
+      id: 'gal-5',
+      title: 'Royal Penthouse Wraparound Veranda',
+      category: 'Rooms',
+      url: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Private open-air lounge and heated plunge pool'
+    },
+    {
+      id: 'gal-6',
+      title: 'Zen Botanical Courtyard Villa',
+      category: 'Rooms',
+      url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Fragrant tropical greenery surrounding private villa retreat'
+    },
+    {
+      id: 'gal-7',
+      title: 'L’Horizon Sunset Cocktail Lounge',
+      category: 'Dining',
+      url: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Artisan mixology and live music lounge'
+    },
+    {
+      id: 'gal-8',
+      title: 'Private Cliffside Ocean Walkway',
+      category: 'Resort',
+      url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Secluded seaside path directly accessible to hotel guests'
+    }
+  ]);
 
-    dataStore.setContent('testimonials', [
-      {
-        id: 't-1',
-        guestName: 'Sir Arthur & Lady Evelyn Montgomery',
-        stayDate: 'September 2026',
-        roomType: 'Royal Horizon Penthouse',
-        comment: 'An extraordinary sanctuary. From our private arrival to the attentive discretion of our butler, every detail at The Grand Azure whispered understated refinement. The sunset views over the Pacific from the plunge pool are unforgettable.',
-        rating: 5,
-        verified: true
-      },
-      {
-        id: 't-2',
-        guestName: 'Dr. Vivienne Chen',
-        stayDate: 'August 2026',
-        roomType: 'Garden Sanctuary Villa',
-        comment: 'The spa and Zen garden villa exceeded every expectation. True peace and privacy, with culinary creations that rival three-star Michelin establishments in Europe. We will certainly return every season.',
-        rating: 5,
-        verified: true
-      },
-      {
-        id: 't-3',
-        guestName: 'Julian & Claire Sterling',
-        stayDate: 'July 2026',
-        roomType: 'The Azure Ocean Suite',
-        comment: 'Booking was remarkably smooth; the concierge phoned us within two hours of our online inquiry and tailored every reservation to our anniversary. The warmth of the hospitality is genuine and world-class.',
-        rating: 5,
-        verified: true
-      }
-    ]);
-  }
+  dataStore.setContent('testimonials', [
+    {
+      id: 't-1',
+      guestName: 'Rajesh & Sunita Mehra',
+      stayDate: 'September 2026',
+      roomType: 'Royal Horizon Penthouse',
+      comment: 'An extraordinary sanctuary. From our private arrival to the attentive discretion of our butler, every detail at XYZ Hotel whispered understated refinement. The sunset views over the sea from the plunge pool are unforgettable.',
+      rating: 5,
+      verified: true
+    },
+    {
+      id: 't-2',
+      guestName: 'Ananya Singhal',
+      stayDate: 'August 2026',
+      roomType: 'Garden Sanctuary Villa',
+      comment: 'The spa and Zen garden villa exceeded every expectation. True peace and privacy, with culinary creations that rival top international establishments. We will certainly return every season.',
+      rating: 5,
+      verified: true
+    },
+    {
+      id: 't-3',
+      guestName: 'Vikram & Radhika Oberoi',
+      stayDate: 'July 2026',
+      roomType: 'The Ocean Suite',
+      comment: 'Booking was remarkably smooth; the concierge phoned us within two hours of our online inquiry and tailored every reservation to our anniversary. The warmth of the hospitality is genuine and world-class.',
+      rating: 5,
+      verified: true
+    }
+  ]);
 
   // 5. Seed Initial Activity Log
   dataStore.logActivity({
     action: 'SYSTEM_INITIALIZED',
     category: 'SYSTEM',
-    details: 'The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.',
+    details: 'XYZ Hotel database seeded with verified rooms, verified offers, authentic content, and administrative credentials.',
     performedBy: { name: 'System Installer' }
   });
 
-  console.log('[Seed] Database initialization complete.');
+  console.log('[Seed] XYZ Hotel database initialization complete.');
 };
 
 // If run directly via node
 if (process.argv[1]?.endsWith('seed.js')) {
-  seedData().then(() => {
+  seedData(true).then(() => {
     console.log('[Seed] Standalone seed run finished.');
     process.exit(0);
   });

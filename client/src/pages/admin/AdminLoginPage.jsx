@@ -7,8 +7,8 @@ export default function AdminLoginPage() {
   const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('admin@grandazure.com');
-  const [password, setPassword] = useState('AzureAdmin2026!');
+  const [email, setEmail] = useState('admin@xyzhotel.com');
+  const [password, setPassword] = useState('XYZAdmin2026!');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -50,13 +50,13 @@ export default function AdminLoginPage() {
         {/* Header Monogram */}
         <div className="text-center space-y-2">
           <div className="w-14 h-14 rounded-full border border-gold-400/80 bg-navy-950 flex items-center justify-center mx-auto shadow-gold-glow">
-            <span className="font-serif font-bold text-gold-400 text-xl tracking-widest">GA</span>
+            <span className="font-serif font-bold text-gold-400 text-base tracking-widest">XYZ</span>
           </div>
           <h2 className="font-serif text-2xl font-bold text-white tracking-wide">
             Management Portal
           </h2>
           <p className="text-xs text-slate-400">
-            The Grand Azure Resort &bull; Restricted Staff Access
+            XYZ Hotel &bull; Restricted Staff Access
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function AdminLoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="staff@grandazure.com"
+                placeholder="staff@xyzhotel.com"
                 required
                 className="w-full bg-navy-950 border border-navy-700 rounded-lg pl-9 pr-3 py-2 text-xs text-white focus:outline-none focus:border-gold-400"
               />
@@ -131,8 +131,8 @@ export default function AdminLoginPage() {
             <CheckCircle2 className="w-3 h-3 text-gold-400" />
             <span>Default Provisioned Credentials:</span>
           </div>
-          <div><strong>Super Admin:</strong> <code className="text-white">admin@grandazure.com</code> / <code className="text-white">AzureAdmin2026!</code></div>
-          <div><strong>Manager:</strong> <code className="text-white">manager@grandazure.com</code> / <code className="text-white">AzureManager2026!</code></div>
+          <div><strong>Super Admin:</strong> <code className="text-white">admin@xyzhotel.com</code> / <code className="text-white">XYZAdmin2026!</code></div>
+          <div><strong>Manager:</strong> <code className="text-white">manager@xyzhotel.com</code> / <code className="text-white">XYZManager2026!</code></div>
         </div>
 
       </div>

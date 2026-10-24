@@ -63,11 +63,11 @@ export default function ContactPage() {
     }
   };
 
-  const phone = hotelInfo?.contact?.phone || '+1 (858) 555-0199';
-  const phoneRaw = hotelInfo?.contact?.phoneRaw || '+18585550199';
-  const email = hotelInfo?.contact?.email || 'concierge@grandazureresort.com';
-  const whatsapp = hotelInfo?.contact?.whatsapp || '18585550199';
-  const address = hotelInfo?.address?.full || '420 Ocean Promenade, Azure Cove, CA 92037, USA';
+  const phone = hotelInfo?.contact?.phone || '+91 98201 23456';
+  const phoneRaw = hotelInfo?.contact?.phoneRaw || '+919820123456';
+  const email = hotelInfo?.contact?.email || 'concierge@xyzhotel.com';
+  const whatsapp = hotelInfo?.contact?.whatsapp || '919820123456';
+  const address = hotelInfo?.address?.full || '420 Marine Promenade, Coastal Bay, Goa 403001, India';
 
   return (
     <div className="space-y-20 pb-24">
@@ -291,7 +291,7 @@ export default function ContactPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="e.g. +1 (858) 555-0199"
+                    placeholder="e.g. +91 98201 23456"
                     className="w-full bg-ivory-50 border border-slate-300 rounded px-3 py-2 text-xs text-navy-950 focus:outline-none focus:border-gold-500"
                   />
                 </div>

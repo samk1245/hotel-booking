@@ -24,7 +24,7 @@ export default function GalleryPage() {
         <div className="absolute inset-0 z-0 opacity-40">
           <img
             src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=80"
-            alt="The Grand Azure Photography"
+            alt="XYZ Hotel Photography"
             className="w-full h-full object-cover object-center"
           />
         </div>

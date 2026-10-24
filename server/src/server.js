@@ -67,7 +67,7 @@ app.use('/uploads', express.static(uploadDir));
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'healthy',
-    hotel: 'The Grand Azure Resort & Spa',
+    hotel: 'XYZ Hotel',
     timestamp: new Date().toISOString()
   });
 });
@@ -113,7 +113,7 @@ const startServer = async () => {
     if (process.env.NODE_ENV !== 'test') {
       app.listen(PORT, () => {
         console.log(`\n======================================================`);
-        console.log(`✨ The Grand Azure Resort & Spa API is online on port ${PORT}`);
+        console.log(`✨ XYZ Hotel API is online on port ${PORT}`);
         console.log(`📡 Base API URL: http://localhost:${PORT}/api`);
         console.log(`🔐 Admin Route: ${process.env.ADMIN_PATH || '/private-management'} (Configurable)`);
         console.log(`======================================================\n`);

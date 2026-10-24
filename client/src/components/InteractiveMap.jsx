@@ -76,7 +76,7 @@ export default function InteractiveMap({ address, coordinates }) {
       const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
       marker.bindPopup(`
         <div style="text-align: center; padding: 4px; font-family: sans-serif;">
-          <strong style="color: #07111E; font-size: 13px; display: block; font-family: serif;">The Grand Azure Resort & Spa</strong>
+          <strong style="color: #07111E; font-size: 13px; display: block; font-family: serif;">XYZ Hotel</strong>
           <span style="font-size: 11px; color: #64748B;">${fullAddress}</span>
         </div>
       `).openPopup();

@@ -33,7 +33,7 @@ export default function RoomCard({ room }) {
           <div>
             <span className="text-[10px] uppercase tracking-wider text-ivory-300 block">Indicative Starting Rate</span>
             <span className="text-xl font-serif font-bold text-gold-300">
-              ${room.basePrice}
+              ₹{room.basePrice?.toLocaleString('en-IN')}
             </span>
             <span className="text-xs text-ivory-300 ml-1">/ night</span>
           </div>

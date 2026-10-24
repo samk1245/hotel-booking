@@ -1,7 +1,7 @@
 {
   "name": "grand-azure-server",
   "version": "1.0.0",
-  "description": "Backend API for Grand Azure Hotel & Booking Inquiry Management",
+  "description": "Backend API for XYZ Hotel & Booking Inquiry Management",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
