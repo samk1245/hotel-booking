@@ -110,7 +110,7 @@ const startServer = async () => {
     await connectDB();
     await seedData();
 
-    if (process.env.NODE_ENV !== 'test') {
+    if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
       app.listen(PORT, () => {
         console.log(`\n======================================================`);
         console.log(`✨ XYZ Hotel API is online on port ${PORT}`);
