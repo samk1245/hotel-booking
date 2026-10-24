@@ -7,11 +7,12 @@ export default function RoomsPage() {
   const { rooms } = useHotel();
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', ...new Set(rooms.map(r => r.category))];
+  const safeRooms = Array.isArray(rooms) ? rooms : [];
+  const categories = ['All', ...new Set(safeRooms.map(r => r.category))];
 
   const filteredRooms = selectedCategory === 'All'
-    ? rooms
-    : rooms.filter(r => r.category === selectedCategory);
+    ? safeRooms
+    : safeRooms.filter(r => r.category === selectedCategory);
 
   return (
     <div className="space-y-16 pb-24">

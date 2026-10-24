@@ -35,7 +35,7 @@ export default function DiningPage() {
         
         {/* Dining Venues Grid */}
         <div className="space-y-16">
-          {dining.map((item, idx) => (
+          {(Array.isArray(dining) ? dining : []).map((item, idx) => (
             <div 
               key={idx}
               className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${

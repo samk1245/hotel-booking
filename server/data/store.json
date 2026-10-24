@@ -425,12 +425,12 @@
       "_id": "83182a9e-7455-4a9a-bccf-ec258f491c34",
       "isActive": true,
       "createdAt": "2026-10-24T09:19:32.988Z",
-      "updatedAt": "2026-10-24T09:36:59.406Z",
+      "updatedAt": "2026-10-24T10:01:06.821Z",
       "name": "Elena Rostova",
       "email": "admin@grandazure.com",
       "passwordHash": "$2a$10$1Nq6wBqJl7Mv/oYCIxg3KeG888fO1Pil95YMuOrhZQZZKeXUTkwE.",
       "role": "superadmin",
-      "lastLogin": "2026-10-24T09:36:59.406Z"
+      "lastLogin": "2026-10-24T10:01:06.820Z"
     },
     {
       "_id": "40e1a242-3d88-42b7-be55-defde007eaa1",
@@ -481,8 +481,8 @@
       "lastUpdatedAt": "2026-10-24T09:19:32.999Z",
       "lastUpdatedBy": "Staff"
     },
-    "dining": {
-      "0": {
+    "dining": [
+      {
         "name": "The Azure Terrace",
         "cuisine": "Coastal Mediterranean & Pacific Seafood",
         "chef": "Executive Chef Laurent Fournier",
@@ -491,7 +491,7 @@
         "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
         "dressCode": "Resort Elegant (Collared shirts for gentlemen; no athletic attire)"
       },
-      "1": {
+      {
         "name": "Saltwater Grill & Tide Bar",
         "cuisine": "Artisan Wood-Fired Grilling & Raw Oyster Bar",
         "chef": "Chef de Cuisine Kenji Tanaka",
@@ -500,7 +500,7 @@
         "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
         "dressCode": "Smart Casual"
       },
-      "2": {
+      {
         "name": "L’Horizon Sunset Lounge",
         "cuisine": "Botanical Mixology & Caviar Tasting",
         "chef": "Master Mixologist Camille Dupuis",
@@ -508,10 +508,8 @@
         "hours": "Daily 16:00 – 01:00",
         "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80",
         "dressCode": "Resort Evening"
-      },
-      "lastUpdatedAt": "2026-10-24T09:19:33.000Z",
-      "lastUpdatedBy": "Staff"
-    },
+      }
+    ],
     "wellness": {
       "title": "The Azure Ocean Spa & Wellness Sanctuary",
       "tagline": "Ancient Thalassotherapy Meets Modern Restorative Science",
@@ -528,96 +526,92 @@
       "lastUpdatedAt": "2026-10-24T09:19:33.001Z",
       "lastUpdatedBy": "Staff"
     },
-    "faqs": {
-      "0": {
+    "faqs": [
+      {
         "question": "What is the procedure for booking inquiries through this website?",
         "answer": "Submitting a booking inquiry sends your desired dates and room preferences directly to our private reservations concierge. Our team personally reviews real-time suite inventory and contacts you via phone or email within 2 to 4 hours with guaranteed availability and a customized reservation confirmation."
       },
-      "1": {
+      {
         "question": "Are published room rates all-inclusive or subject to confirmation?",
         "answer": "All published prices on this website represent authorized baseline rates. Final total pricing, including seasonal adjustments, occupancy taxes, and any requested bespoke additions, is formally provided and confirmed by our reservation team before any commitment is finalized."
       },
-      "2": {
+      {
         "question": "What are the official check-in and check-out times?",
         "answer": "Check-in commences at 15:00 (3:00 PM), and check-out is at 11:00 AM (12:00 PM for Penthouse & Villa guests). Early check-in or late check-out may be arranged in advance with our concierge team based on availability."
       },
-      "3": {
+      {
         "question": "Do you offer private airport transfers and chauffeur services?",
         "answer": "Yes. Our private fleet of electric luxury house cars provides complimentary transfers within a 5-mile local radius. Private airport transfers from San Diego International (SAN) and Los Angeles (LAX) can be scheduled with our concierge."
       },
-      "4": {
+      {
         "question": "What is your cancellation and modification policy?",
         "answer": "Booking inquiries carry zero financial obligation. Once a reservation is confirmed with our front desk, complimentary cancellation is available up to 48 hours prior to arrival date (7 days for Penthouse bookings), after which the first night deposit applies."
       },
-      "5": {
+      {
         "question": "Can dietary restrictions and bespoke dining requests be accommodated?",
         "answer": "Absolutely. Our culinary teams across The Azure Terrace and Saltwater Grill regularly prepare personalized gluten-free, vegan, halal, and allergen-safe tasting menus. Please note any dietary preferences in your booking inquiry."
-      },
-      "lastUpdatedAt": "2026-10-24T09:19:33.001Z",
-      "lastUpdatedBy": "Staff"
-    },
-    "gallery": {
-      "0": {
+      }
+    ],
+    "gallery": [
+      {
         "id": "gal-1",
         "title": "Infinity Oceanfront Pool at Sunset",
         "category": "Resort",
         "url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80",
         "caption": "Heated cliffside infinity pool overlooking the Pacific sunset"
       },
-      "1": {
+      {
         "id": "gal-2",
         "title": "The Azure Ocean Suite Master Bedroom",
         "category": "Rooms",
         "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80",
         "caption": "Panoramic ocean view bedroom with custom king bed"
       },
-      "2": {
+      {
         "id": "gal-3",
         "title": "The Azure Terrace Fine Dining",
         "category": "Dining",
         "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
         "caption": "Candlelit dining overlooking the evening coastal surf"
       },
-      "3": {
+      {
         "id": "gal-4",
         "title": "Thalassotherapy & Mineral Spa",
         "category": "Wellness",
         "url": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
         "caption": "Calming hydrotherapy mineral pool and treatment suites"
       },
-      "4": {
+      {
         "id": "gal-5",
         "title": "Royal Penthouse Wraparound Veranda",
         "category": "Rooms",
         "url": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80",
         "caption": "Private open-air lounge and heated plunge pool"
       },
-      "5": {
+      {
         "id": "gal-6",
         "title": "Zen Botanical Courtyard Villa",
         "category": "Rooms",
         "url": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=80",
         "caption": "Fragrant tropical greenery surrounding private villa retreat"
       },
-      "6": {
+      {
         "id": "gal-7",
         "title": "L’Horizon Sunset Cocktail Lounge",
         "category": "Dining",
         "url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1600&q=80",
         "caption": "Artisan mixology and live jazz lounge"
       },
-      "7": {
+      {
         "id": "gal-8",
         "title": "Private Cliffside Ocean Walkway",
         "category": "Resort",
         "url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
         "caption": "Secluded seaside path directly accessible to hotel guests"
-      },
-      "lastUpdatedAt": "2026-10-24T09:19:33.003Z",
-      "lastUpdatedBy": "Staff"
-    },
-    "testimonials": {
-      "0": {
+      }
+    ],
+    "testimonials": [
+      {
         "id": "t-1",
         "guestName": "Sir Arthur & Lady Evelyn Montgomery",
         "stayDate": "September 2026",
@@ -626,7 +620,7 @@
         "rating": 5,
         "verified": true
       },
-      "1": {
+      {
         "id": "t-2",
         "guestName": "Dr. Vivienne Chen",
         "stayDate": "August 2026",
@@ -635,7 +629,7 @@
         "rating": 5,
         "verified": true
       },
-      "2": {
+      {
         "id": "t-3",
         "guestName": "Julian & Claire Sterling",
         "stayDate": "July 2026",
@@ -643,10 +637,8 @@
         "comment": "Booking was remarkably smooth; the concierge phoned us within two hours of our online inquiry and tailored every reservation to our anniversary. The warmth of the hospitality is genuine and world-class.",
         "rating": 5,
         "verified": true
-      },
-      "lastUpdatedAt": "2026-10-24T09:19:33.004Z",
-      "lastUpdatedBy": "Staff"
-    }
+      }
+    ]
   },
   "offers": [
     {
@@ -717,6 +709,236 @@
     }
   ],
   "activityLogs": [
+    {
+      "_id": "56833d8e-7a60-41bc-b3ca-3209d2d23b81",
+      "action": "STAFF_ACCOUNT_DELETED",
+      "category": "STAFF",
+      "details": "Deleted staff member: Test Staff Member (teststaff@grandazure.com)",
+      "performedBy": {
+        "id": "83182a9e-7455-4a9a-bccf-ec258f491c34",
+        "name": "Elena Rostova",
+        "email": "admin@grandazure.com",
+        "role": "superadmin"
+      },
+      "ipAddress": "::1",
+      "createdAt": "2026-10-24T10:01:06.926Z"
+    },
+    {
+      "_id": "7e3bc261-5cd0-4adf-96b5-8a505a59574c",
+      "action": "STAFF_ACCOUNT_CREATED",
+      "category": "STAFF",
+      "details": "Created staff account for Test Staff Member with role [staff]",
+      "performedBy": {
+        "id": "83182a9e-7455-4a9a-bccf-ec258f491c34",
+        "name": "Elena Rostova",
+        "email": "admin@grandazure.com",
+        "role": "superadmin"
+      },
+      "ipAddress": "::1",
+      "createdAt": "2026-10-24T10:01:06.909Z"
+    },
+    {
+      "_id": "34f4e1cd-7ee6-4abe-ad6b-1ce0a08fc694",
+      "action": "USER_LOGIN",
+      "category": "AUTH",
+      "details": "Elena Rostova (superadmin) logged in successfully.",
+      "performedBy": {
+        "id": "83182a9e-7455-4a9a-bccf-ec258f491c34",
+        "name": "Elena Rostova",
+        "email": "admin@grandazure.com"
+      },
+      "ipAddress": "::1",
+      "createdAt": "2026-10-24T10:01:06.825Z"
+    },
+    {
+      "_id": "3ba40ece-0dcf-4509-b0f4-a31f30fb319d",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T10:00:49.322Z"
+    },
+    {
+      "_id": "d8f5435f-16cf-4d15-b616-99f8db80640e",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:49:24.524Z"
+    },
+    {
+      "_id": "33fcabfd-597b-4ff6-8c4c-d080216cd40d",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:47:23.079Z"
+    },
+    {
+      "_id": "7fe6a7ab-e4e6-40a1-8669-e976753c4eed",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:47:17.039Z"
+    },
+    {
+      "_id": "f6c80870-bd16-48f0-b794-f5f5260396da",
+      "action": "USER_LOGIN",
+      "category": "AUTH",
+      "details": "Elena Rostova (superadmin) logged in successfully.",
+      "performedBy": {
+        "id": "83182a9e-7455-4a9a-bccf-ec258f491c34",
+        "name": "Elena Rostova",
+        "email": "admin@grandazure.com"
+      },
+      "ipAddress": "::1",
+      "createdAt": "2026-10-24T09:41:55.305Z"
+    },
+    {
+      "_id": "6d733b86-e347-47cd-8bf8-70b7ef2b0b3c",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:57.315Z"
+    },
+    {
+      "_id": "0592579a-4682-4668-800c-75ce6ff4ba8f",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:49.415Z"
+    },
+    {
+      "_id": "a8b8d895-cf89-4a09-ab0c-23e55ed3ee11",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:48.325Z"
+    },
+    {
+      "_id": "5ab7f3e7-e07d-4b71-b0b1-3c371e861a21",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:47.205Z"
+    },
+    {
+      "_id": "f9fc6757-d700-4268-b813-e89b95e4705c",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:45.503Z"
+    },
+    {
+      "_id": "3c48bd06-a2c1-448c-ad86-76da40a7c991",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:44.414Z"
+    },
+    {
+      "_id": "38fa4e59-db79-4b4a-a2a6-d23d5519a9ff",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:43.204Z"
+    },
+    {
+      "_id": "bfaafd35-06ff-444c-bb16-32a65b2c34ef",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:42.088Z"
+    },
+    {
+      "_id": "137ad7bc-23ca-449d-9b03-1d04957b6456",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:40.962Z"
+    },
+    {
+      "_id": "9301630a-5f69-4517-8002-d1a2fdcf65e7",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:39.836Z"
+    },
+    {
+      "_id": "fec2c822-b77b-45e2-a067-c30c0bec66df",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:38.717Z"
+    },
+    {
+      "_id": "c1bfbde2-6fc0-4aa7-a5da-00abaded6888",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "The Grand Azure Resort database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-10-24T09:40:37.391Z"
+    },
     {
       "_id": "42c9709a-7db8-4cab-9190-2efc80c57505",
       "action": "INQUIRY_NOTE_ADDED",

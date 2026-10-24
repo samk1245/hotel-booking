@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { HotelProvider } from './context/HotelContext';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -51,11 +52,12 @@ export default function App() {
   const adminBase = '/private-management';
 
   return (
-    <AuthProvider>
-      <HotelProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
+    <ErrorBoundary>
+      <AuthProvider>
+        <HotelProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <Routes>
             
             {/* Public Hotel Website Routes */}
             <Route path="/" element={<PublicLayout><HomePage /></PublicLayout>} />
@@ -104,5 +106,6 @@ export default function App() {
         </BrowserRouter>
       </HotelProvider>
     </AuthProvider>
+    </ErrorBoundary>
   );
 }

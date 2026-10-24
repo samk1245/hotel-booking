@@ -3,6 +3,7 @@ import {
   getStaffList, 
   createStaffAccount, 
   toggleStaffStatus, 
+  deleteStaffMember,
   getDashboardStats, 
   getActivityLogs 
 } from '../controllers/staffController.js';
@@ -13,7 +14,8 @@ const router = express.Router();
 router.get('/stats', authenticate, getDashboardStats);
 router.get('/logs', authenticate, getActivityLogs);
 router.get('/list', authenticate, authorize('superadmin', 'manager'), getStaffList);
-router.post('/create', authenticate, authorize('superadmin'), createStaffAccount);
-router.patch('/:id/toggle', authenticate, authorize('superadmin'), toggleStaffStatus);
+router.post('/create', authenticate, authorize('superadmin', 'manager'), createStaffAccount);
+router.patch('/:id/toggle', authenticate, authorize('superadmin', 'manager'), toggleStaffStatus);
+router.delete('/:id', authenticate, authorize('superadmin', 'manager'), deleteStaffMember);
 
 export default router;

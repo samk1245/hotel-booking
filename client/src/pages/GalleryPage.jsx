@@ -10,9 +10,11 @@ export default function GalleryPage() {
 
   const categories = ['All', 'Resort', 'Rooms', 'Dining', 'Wellness'];
 
+  const safeGallery = Array.isArray(gallery) ? gallery : [];
+
   const filtered = activeCategory === 'All'
-    ? gallery
-    : gallery.filter(item => item.category === activeCategory);
+    ? safeGallery
+    : safeGallery.filter(item => item.category === activeCategory);
 
   return (
     <div className="space-y-16 pb-24">

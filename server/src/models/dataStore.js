@@ -271,11 +271,15 @@ class DataStore {
 
   setContent(key, data, updatedBy = 'Staff') {
     if (!this.state.content) this.state.content = {};
-    this.state.content[key] = {
-      ...data,
-      lastUpdatedAt: new Date().toISOString(),
-      lastUpdatedBy: updatedBy
-    };
+    if (Array.isArray(data)) {
+      this.state.content[key] = data;
+    } else {
+      this.state.content[key] = {
+        ...data,
+        lastUpdatedAt: new Date().toISOString(),
+        lastUpdatedBy: updatedBy
+      };
+    }
     this.save();
     return this.state.content[key];
   }

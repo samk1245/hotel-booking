@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Premium Hotel Website with Booking Inquiry System and Private Admin Dashboard",
   "scripts": {
+    "start": "node server/src/server.js",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
     "install:server": "cd server && npm install",
     "install:client": "cd client && npm install",
     "install:all": "npm install && npm run install:server && npm run install:client",
@@ -12,7 +14,19 @@
     "seed": "cd server && npm run seed",
     "test": "cd server && npm test"
   },
-  "keywords": ["hotel", "hospitality", "luxury", "booking-inquiry", "admin-dashboard", "react", "express", "mongodb"],
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "keywords": [
+    "hotel",
+    "hospitality",
+    "luxury",
+    "booking-inquiry",
+    "admin-dashboard",
+    "react",
+    "express",
+    "mongodb"
+  ],
   "author": "Antigravity Luxury Hospitality Engineering",
   "license": "ISC"
 }

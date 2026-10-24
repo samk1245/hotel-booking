@@ -3,6 +3,17 @@ import { api } from '../services/api';
 
 const HotelContext = createContext(null);
 
+const ensureArray = (val) => {
+  if (Array.isArray(val)) return val;
+  if (val && typeof val === 'object') {
+    return Object.keys(val)
+      .filter(k => !isNaN(parseInt(k, 10)))
+      .sort((a, b) => parseInt(a, 10) - parseInt(b, 10))
+      .map(k => val[k]);
+  }
+  return [];
+};
+
 export const HotelProvider = ({ children }) => {
   const [rooms, setRooms] = useState([]);
   const [offers, setOffers] = useState([]);
@@ -27,16 +38,16 @@ export const HotelProvider = ({ children }) => {
         api.getContent()
       ]);
 
-      setRooms(roomsRes.rooms || []);
-      setOffers(offersRes.offers || []);
+      setRooms(ensureArray(roomsRes?.rooms));
+      setOffers(ensureArray(offersRes?.offers));
 
-      const content = contentRes.content || {};
+      const content = contentRes?.content || {};
       setHotelInfo(content.hotel_info || null);
-      setDining(content.dining || []);
+      setDining(ensureArray(content.dining));
       setWellness(content.wellness || null);
-      setFaqs(content.faqs || []);
-      setGallery(content.gallery || []);
-      setTestimonials(content.testimonials || []);
+      setFaqs(ensureArray(content.faqs));
+      setGallery(ensureArray(content.gallery));
+      setTestimonials(ensureArray(content.testimonials));
     } catch (err) {
       console.error('Failed to load hotel context data:', err);
     } finally {

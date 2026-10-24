@@ -33,9 +33,15 @@ export default function HomePage() {
   // FAQ Accordion State
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
+  const safeGallery = Array.isArray(gallery) ? gallery : [];
+  const safeRooms = Array.isArray(rooms) ? rooms : [];
+  const safeDining = Array.isArray(dining) ? dining : [];
+  const safeFaqs = Array.isArray(faqs) ? faqs : [];
+  const safeTestimonials = Array.isArray(testimonials) ? testimonials : [];
+
   const filteredGallery = selectedGalleryCategory === 'All'
-    ? gallery
-    : gallery.filter(item => item.category === selectedGalleryCategory);
+    ? safeGallery
+    : safeGallery.filter(item => item.category === selectedGalleryCategory);
 
   const galleryCategories = ['All', 'Resort', 'Rooms', 'Dining', 'Wellness'];
 
@@ -153,7 +159,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rooms.slice(0, 3).map((room) => (
+            {safeRooms.slice(0, 3).map((room) => (
               <RoomCard key={room._id} room={room} />
             ))}
           </div>
@@ -245,7 +251,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {dining.map((item, idx) => (
+            {safeDining.map((item, idx) => (
               <div 
                 key={idx} 
                 className="bg-navy-900 rounded-xl overflow-hidden border border-navy-800 flex flex-col justify-between group hover:border-gold-400/40 transition-all duration-300"
@@ -387,7 +393,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map(t => (
+            {safeTestimonials.map(t => (
               <div 
                 key={t.id} 
                 className="bg-white p-8 rounded-xl border border-ivory-200 shadow-luxury flex flex-col justify-between"
@@ -461,7 +467,7 @@ export default function HomePage() {
         </div>
 
         <div className="space-y-3">
-          {faqs.map((faq, idx) => (
+          {safeFaqs.map((faq, idx) => (
             <div 
               key={idx}
               className="bg-white rounded-lg border border-ivory-200 overflow-hidden shadow-sm transition-colors"

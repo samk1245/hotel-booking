@@ -113,6 +113,9 @@ export const api = {
     method: 'PATCH',
     body: JSON.stringify({ isActive })
   }),
+  adminDeleteStaff: (id) => request(`/staff/${id}`, {
+    method: 'DELETE'
+  }),
 
   uploadImage: async (file) => {
     const token = localStorage.getItem('grand_azure_admin_token');

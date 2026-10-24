@@ -14,16 +14,22 @@ export const createStaffAccount = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
 
-    if (!name || !email || !password || password.length < 8) {
+    if (!name || !name.trim()) {
+      return res.status(400).json({ success: false, message: 'Staff member name is required.' });
+    }
+    if (!email || !email.trim()) {
+      return res.status(400).json({ success: false, message: 'Email address is required.' });
+    }
+    if (!password || password.length < 4) {
       return res.status(400).json({
         success: false,
-        message: 'Name, email, and password (min 8 characters) are required.'
+        message: 'Password must be at least 4 characters.'
       });
     }
 
     const existing = dataStore.getUserByEmail(email);
     if (existing) {
-      return res.status(400).json({ success: false, message: 'An account with this email already exists.' });
+      return res.status(400).json({ success: false, message: 'An account with this email address already exists.' });
     }
 
     const passwordHash = await bcrypt.hash(password, 10);
@@ -33,21 +39,50 @@ export const createStaffAccount = async (req, res) => {
       passwordHash,
       role: role || 'staff',
       isActive: true,
-      createdBy: req.user.name
+      createdBy: req.user?.name || 'Administrator'
     });
 
     dataStore.logActivity({
       action: 'STAFF_ACCOUNT_CREATED',
       category: 'STAFF',
-      details: `Created staff account for ${newUser.name} with role ${newUser.role}`,
+      details: `Created staff account for ${newUser.name} with role [${newUser.role}]`,
       performedBy: req.user,
       ipAddress: req.ip
     });
 
     const { passwordHash: _, ...safeUser } = newUser;
-    return res.status(201).json({ success: true, message: 'Staff account provisioned.', user: safeUser });
+    return res.status(201).json({ success: true, message: 'Staff account provisioned successfully.', user: safeUser });
   } catch (err) {
     return res.status(500).json({ success: false, message: 'Failed to create staff account.' });
+  }
+};
+
+export const deleteStaffMember = (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (id === req.user.id) {
+      return res.status(400).json({ success: false, message: 'You cannot delete your own active administrator account.' });
+    }
+
+    const existing = dataStore.getUserById(id);
+    if (!existing) {
+      return res.status(404).json({ success: false, message: 'Staff account not found.' });
+    }
+
+    dataStore.deleteUser(id);
+
+    dataStore.logActivity({
+      action: 'STAFF_ACCOUNT_DELETED',
+      category: 'STAFF',
+      details: `Deleted staff member: ${existing.name} (${existing.email})`,
+      performedBy: req.user,
+      ipAddress: req.ip
+    });
+
+    return res.status(200).json({ success: true, message: `Staff member ${existing.name} removed successfully.` });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Failed to delete staff member.' });
   }
 };
 

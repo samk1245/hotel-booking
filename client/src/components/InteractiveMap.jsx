@@ -16,67 +16,83 @@ export default function InteractiveMap({ address, coordinates }) {
 
   useEffect(() => {
     if (!mapContainerRef.current) return;
-    if (mapInstanceRef.current) return; // already initialized
 
-    // Custom Luxury Gold Marker Icon
-    const customIcon = L.divIcon({
-      className: 'custom-hotel-pin',
-      html: `
-        <div style="
-          width: 38px;
-          height: 38px;
-          background: #0B192C;
-          border: 2px solid #C5A880;
-          border-radius: 50% 50% 50% 0;
-          transform: rotate(-45deg);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 4px 15px rgba(11,25,44,0.4);
-        ">
+    // Ensure container is clean and no duplicate instance exists
+    if (mapInstanceRef.current) {
+      try {
+        mapInstanceRef.current.remove();
+      } catch (e) {}
+      mapInstanceRef.current = null;
+    }
+    if (mapContainerRef.current._leaflet_id) {
+      delete mapContainerRef.current._leaflet_id;
+    }
+
+    try {
+      // Custom Luxury Gold Marker Icon
+      const customIcon = L.divIcon({
+        className: 'custom-hotel-pin',
+        html: `
           <div style="
-            width: 14px;
-            height: 14px;
-            background: #C5A880;
-            border-radius: 50%;
-            transform: rotate(45deg);
-          "></div>
+            width: 38px;
+            height: 38px;
+            background: #0B192C;
+            border: 2px solid #C5A880;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(11,25,44,0.4);
+          ">
+            <div style="
+              width: 14px;
+              height: 14px;
+              background: #C5A880;
+              border-radius: 50%;
+              transform: rotate(45deg);
+            "></div>
+          </div>
+        `,
+        iconSize: [38, 38],
+        iconAnchor: [19, 38],
+        popupAnchor: [0, -38]
+      });
+
+      // Initialize Map
+      const map = L.map(mapContainerRef.current, {
+        center: [lat, lng],
+        zoom: 14,
+        scrollWheelZoom: false
+      });
+
+      // High quality OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Marker
+      const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+      marker.bindPopup(`
+        <div style="text-align: center; padding: 4px; font-family: sans-serif;">
+          <strong style="color: #07111E; font-size: 13px; display: block; font-family: serif;">The Grand Azure Resort & Spa</strong>
+          <span style="font-size: 11px; color: #64748B;">${fullAddress}</span>
         </div>
-      `,
-      iconSize: [38, 38],
-      iconAnchor: [19, 38],
-      popupAnchor: [0, -38]
-    });
+      `).openPopup();
 
-    // Initialize Map
-    const map = L.map(mapContainerRef.current, {
-      center: [lat, lng],
-      zoom: 14,
-      scrollWheelZoom: false
-    });
-
-    // High quality OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 19
-    }).addTo(map);
-
-    // Marker
-    const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
-    marker.bindPopup(`
-      <div style="text-align: center; padding: 4px; font-family: sans-serif;">
-        <strong style="color: #07111E; font-size: 13px; display: block; font-family: serif;">The Grand Azure Resort & Spa</strong>
-        <span style="font-size: 11px; color: #64748B;">${fullAddress}</span>
-      </div>
-    `).openPopup();
-
-    mapInstanceRef.current = map;
+      mapInstanceRef.current = map;
+    } catch (err) {
+      console.warn('Map initialization notice:', err.message);
+    }
 
     return () => {
-      if (mapInstanceRef.current) {
-        mapInstanceRef.current.remove();
-        mapInstanceRef.current = null;
-      }
+      try {
+        if (mapInstanceRef.current) {
+          mapInstanceRef.current.remove();
+          mapInstanceRef.current = null;
+        }
+      } catch (e) {}
     };
   }, [lat, lng, fullAddress]);
 
