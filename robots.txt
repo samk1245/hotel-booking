@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /private-management/
+Disallow: /api/
+
+Sitemap: https://grandazureresort.com/sitemap.xml
