@@ -473,7 +473,7 @@
         "petPolicy": "Well-mannered dogs welcomed in designated Garden Villas with dedicated pet concierge kit (fee applies).",
         "smokingPolicy": "XYZ Hotel is a 100% smoke-free and vape-free sanctuary across all guest rooms, suites, and public indoor spaces."
       },
-      "lastUpdatedAt": "2026-11-13T08:04:08.420Z",
+      "lastUpdatedAt": "2026-11-13T08:09:55.453Z",
       "lastUpdatedBy": "Staff"
     },
     "dining": [
@@ -518,7 +518,7 @@
         "Modern Fitness Center with Coastal Views"
       ],
       "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
-      "lastUpdatedAt": "2026-11-13T08:04:08.422Z",
+      "lastUpdatedAt": "2026-11-13T08:09:55.455Z",
       "lastUpdatedBy": "Staff"
     },
     "faqs": [
@@ -704,6 +704,17 @@
     }
   ],
   "activityLogs": [
+    {
+      "_id": "8fb90887-030d-489e-9ddf-66b101e887c5",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "XYZ Hotel database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T08:09:55.457Z"
+    },
     {
       "_id": "a8a01a8a-517a-4999-a254-9abaa4584ad1",
       "action": "INQUIRY_NOTE_ADDED",
