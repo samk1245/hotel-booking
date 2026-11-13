@@ -1,0 +1,591 @@
+{
+  "rooms": [
+    {
+      "_id": "2335a898-bffc-46cf-ac74-f319c18d49de",
+      "createdAt": "2026-10-24T11:15:55.155Z",
+      "updatedAt": "2026-10-24T11:15:55.155Z",
+      "name": "The Ocean Suite",
+      "slug": "ocean-suite",
+      "category": "Deluxe Ocean Suite",
+      "headline": "Sweeping Arabian Sea Horizons & Private Sunset Terrace",
+      "description": "Perched along the serene coastal shoreline, this sanctuary features expansive floor-to-ceiling glass windows framing endless sea vistas. Decorated in soothing tones of warm ivory, brushed brass, and teak wood, the suite provides a hand-carved king bed, a freestanding deep soaking tub overlooking the sea, and an expansive private terrace with sun loungers.",
+      "basePrice": 11500,
+      "priceDisplayNote": "Rates subject to seasonal confirmation by our reservations desk",
+      "capacity": {
+        "adults": 2,
+        "children": 1,
+        "totalMax": 3
+      },
+      "bedType": "1 Custom King Bed with Organic Linen",
+      "roomSize": "85 sq m / 915 sq ft",
+      "view": "Panoramic Ocean & Sunset View",
+      "floor": "Upper Levels (Floors 5 – 7)",
+      "amenities": [
+        "Oceanfront Private Terrace",
+        "Freestanding Italian Marble Soaking Tub",
+        "Aromatherapy Rainfall Shower",
+        "Bespoke Bang & Olufsen Sound System",
+        "Complimentary High-Speed Wi-Fi 6",
+        "Curated Refreshment Bar & Nespresso Machine",
+        "24-Hour In-Suite Dining & Butler Call",
+        "Kama Ayurveda Luxury Bath Amenities",
+        "Plush Cotton Robes & Slippers"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80",
+          "caption": "Master bedroom with panoramic ocean vista",
+          "isPrimary": true,
+          "order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Private sunset terrace with teak loungers",
+          "isPrimary": false,
+          "order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Italian marble bathroom with ocean-view soaking tub",
+          "isPrimary": false,
+          "order": 3
+        }
+      ],
+      "policies": {
+        "checkIn": "15:00",
+        "checkOut": "11:00",
+        "cancellation": "Complimentary cancellation up to 48 hours prior to arrival date."
+      },
+      "isFeatured": true,
+      "isPublished": true,
+      "displayOrder": 1
+    },
+    {
+      "_id": "c316b8da-9687-41a3-bbc4-3fb274d19534",
+      "createdAt": "2026-10-24T11:15:55.155Z",
+      "updatedAt": "2026-10-24T11:15:55.155Z",
+      "name": "Royal Horizon Penthouse",
+      "slug": "royal-horizon-penthouse",
+      "category": "Royal Penthouse",
+      "headline": "Crown Jewel of XYZ Hotel with 360° Panoramic Coastline Views",
+      "description": "An architectural tour de force occupying the top level of the resort. Features two expansive master suites, a formal dining salon, a private infinity edge plunge pool on the wraparound veranda, and dedicated around-the-clock butler service. Designed for discerning travelers seeking peerless privacy and grandeur.",
+      "basePrice": 22500,
+      "priceDisplayNote": "Exclusive suite rate; subject to private reservation consultation",
+      "capacity": {
+        "adults": 4,
+        "children": 2,
+        "totalMax": 6
+      },
+      "bedType": "2 California King Beds in Separate Wings",
+      "roomSize": "160 sq m / 1,720 sq ft",
+      "view": "360° Ocean, Coastal Cliffs & Twilight Skyline",
+      "floor": "Private Penthouse Level (Direct Keycard Elevator)",
+      "amenities": [
+        "Private Heated Veranda Plunge Pool",
+        "Dedicated 24/7 Private Butler Service",
+        "Private Direct Keycard Elevator Access",
+        "Two Master Bathrooms with Calacatta Marble",
+        "Living Room Fireplace & Butler Pantry",
+        "Complimentary Luxury Chauffeur Transfer",
+        "Welcome Champagne & High Tea Service",
+        "Forest Essentials Royal Edition Toiletries",
+        "Biometric In-Room Safe"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80",
+          "caption": "Penthouse master suite with floor-to-ceiling glass walls",
+          "isPrimary": true,
+          "order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Salon and private plunge pool terrace",
+          "isPrimary": false,
+          "order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Formal dining salon and reception lounge",
+          "isPrimary": false,
+          "order": 3
+        }
+      ],
+      "policies": {
+        "checkIn": "15:00",
+        "checkOut": "12:00 (Guaranteed Late Check-out)",
+        "cancellation": "Complimentary cancellation up to 7 days prior to arrival."
+      },
+      "isFeatured": true,
+      "isPublished": true,
+      "displayOrder": 2
+    },
+    {
+      "_id": "bda2d135-4bc6-4da2-ba34-edf779c0b3dd",
+      "createdAt": "2026-10-24T11:15:55.156Z",
+      "updatedAt": "2026-10-24T11:15:55.156Z",
+      "name": "Garden Sanctuary Villa",
+      "slug": "garden-sanctuary-villa",
+      "category": "Azure Garden Villa",
+      "headline": "Botanical Seclusion with Private Zen Courtyard",
+      "description": "Tucked within the resort’s lush coastal botanical gardens, our Sanctuary Villa offers absolute tranquility. Enjoy a secluded sun-dappled courtyard, an outdoor stone rain shower beneath tropical frangipani trees, and serene architecture crafted from warm cedar and stone.",
+      "basePrice": 8500,
+      "priceDisplayNote": "Rates subject to seasonal availability confirmation",
+      "capacity": {
+        "adults": 2,
+        "children": 1,
+        "totalMax": 3
+      },
+      "bedType": "1 Handcrafted Teak King Bed",
+      "roomSize": "120 sq m / 1,290 sq ft",
+      "view": "Private Zen Garden & Fountain",
+      "floor": "Ground Level Detached Villa with Private Gates",
+      "amenities": [
+        "Enclosed Private Garden Courtyard",
+        "Outdoor Lava Stone Rain Shower",
+        "Deep Copper Soaking Tub",
+        "Custom Yoga & Meditation Deck",
+        "In-Villa Ayurvedic Herbal Tea Ceremony Set",
+        "Complimentary Daily Spa Hydrotherapy Access",
+        "Organic Botanical Toiletries",
+        "Individual Climate Zones & Fresh Ocean Air Doors"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=80",
+          "caption": "Serene garden villa interior leading out to private courtyard",
+          "isPrimary": true,
+          "order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Private tropical courtyard and open-air rain shower",
+          "isPrimary": false,
+          "order": 2
+        }
+      ],
+      "policies": {
+        "checkIn": "15:00",
+        "checkOut": "11:00",
+        "cancellation": "Complimentary cancellation up to 48 hours prior to arrival."
+      },
+      "isFeatured": true,
+      "isPublished": true,
+      "displayOrder": 3
+    },
+    {
+      "_id": "2b3445e5-4448-4d2f-83d9-23d040372f0d",
+      "createdAt": "2026-10-24T11:15:55.156Z",
+      "updatedAt": "2026-10-24T11:15:55.156Z",
+      "name": "Executive Coastal Suite",
+      "slug": "executive-coastal-suite",
+      "category": "Executive Suite",
+      "headline": "Refined Contemporary Comfort with Marina & Bay Views",
+      "description": "A sophisticated sanctuary balancing work and restorative leisure. Features an ergonomic solid walnut work desk, high-speed encrypted Wi-Fi, an inviting living room, and a generous bedroom overlooking the yacht marina and rugged cliffs.",
+      "basePrice": 6800,
+      "priceDisplayNote": "Rates subject to reservation team verification",
+      "capacity": {
+        "adults": 2,
+        "children": 0,
+        "totalMax": 2
+      },
+      "bedType": "1 Luxury King Bed with Hypoallergenic Down Pillows",
+      "roomSize": "65 sq m / 700 sq ft",
+      "view": "Marina & Coastal Cliff Views",
+      "floor": "Levels 2 – 4",
+      "amenities": [
+        "Separate Living Salon & Bedroom",
+        "Ergonomic Executive Workspace",
+        "Dual Vanity Marble Bathroom",
+        "Walk-in Dressing Wardrobe",
+        "Smart Environmental Controls & Blackout Curtains",
+        "Complimentary Dry Cleaning (2 items/day)",
+        "Espresso Machine & Premium Loose Leaf Teas"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1600&q=80",
+          "caption": "Executive suite living quarters and private balcony",
+          "isPrimary": true,
+          "order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Contemporary bedroom with marina vistas",
+          "isPrimary": false,
+          "order": 2
+        }
+      ],
+      "policies": {
+        "checkIn": "15:00",
+        "checkOut": "11:00",
+        "cancellation": "Complimentary cancellation up to 48 hours prior to arrival."
+      },
+      "isFeatured": false,
+      "isPublished": true,
+      "displayOrder": 4
+    },
+    {
+      "_id": "35cff076-d71f-4f6b-9f02-d000e3ef4ae4",
+      "createdAt": "2026-10-24T11:15:55.157Z",
+      "updatedAt": "2026-10-24T11:15:55.157Z",
+      "name": "Sunrise Bay Villa",
+      "slug": "sunrise-bay-villa",
+      "category": "Presidential Villa",
+      "headline": "Oceanfront Estate with Private Plunge Pool & Sun Deck",
+      "description": "Wake up to golden coastal dawns. This standalone villa provides unprecedented closeness to the surf, featuring dual master suites, private heated plunge pool, dedicated outdoor kitchen, and an expansive lawn kissing the coastline path.",
+      "basePrice": 16500,
+      "priceDisplayNote": "Rates subject to seasonal confirmation",
+      "capacity": {
+        "adults": 4,
+        "children": 2,
+        "totalMax": 6
+      },
+      "bedType": "2 King Beds with Cloud Mattresses",
+      "roomSize": "140 sq m / 1,500 sq ft",
+      "view": "Unobstructed Sunrise Oceanfront",
+      "floor": "Cliffside Ground Estate with Private Gated Access",
+      "amenities": [
+        "Private Heated Plunge Pool & Sun Terrace",
+        "Outdoor Kitchen & Alfresco Dining Cabana",
+        "Direct Access to Coastal Pathway",
+        "Dual En-Suite Bathrooms with Rain Showers",
+        "Wine Storage & Artisan Bar Cart",
+        "Nightly Fire Pit Turndown Service",
+        "Full Concierge Pre-Stocking Service"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80",
+          "caption": "Villa pool terrace facing the open ocean",
+          "isPrimary": true,
+          "order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Spacious coastal living quarters",
+          "isPrimary": false,
+          "order": 2
+        }
+      ],
+      "policies": {
+        "checkIn": "15:00",
+        "checkOut": "12:00",
+        "cancellation": "Complimentary cancellation up to 5 days prior to arrival."
+      },
+      "isFeatured": true,
+      "isPublished": true,
+      "displayOrder": 5
+    },
+    {
+      "_id": "be0d7567-1525-4281-858d-4cb63e937d41",
+      "createdAt": "2026-10-24T11:15:55.157Z",
+      "updatedAt": "2026-10-24T11:15:55.157Z",
+      "name": "The Deluxe Sanctuary",
+      "slug": "deluxe-sanctuary",
+      "category": "Superior Room",
+      "headline": "Classic Elegance & Warm Hospitality",
+      "description": "An intimate retreat providing unmatched comfort. Thoughtfully appointed with natural hardwood floors, custom woven textiles, a spa-inspired rain shower, and a private Juliet balcony overlooking our fragrant herb and rose gardens.",
+      "basePrice": 4900,
+      "priceDisplayNote": "Rates subject to seasonal confirmation",
+      "capacity": {
+        "adults": 2,
+        "children": 0,
+        "totalMax": 2
+      },
+      "bedType": "1 Plush King or 2 Queen Beds",
+      "roomSize": "50 sq m / 540 sq ft",
+      "view": "Courtyard & Fragrant Rose Gardens",
+      "floor": "Levels 1 – 3",
+      "amenities": [
+        "Juliet Balcony overlooking Gardens",
+        "Spa Rain Shower & Natural Stone Finishes",
+        "Smart HDTV with Streaming Support",
+        "Fine Linen and Feather Duvet",
+        "In-Room Safe & Refreshment Center",
+        "Complimentary High-Speed Wi-Fi"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=80",
+          "caption": "Warm ambient lighting and tailored upholstery",
+          "isPrimary": true,
+          "order": 1
+        }
+      ],
+      "policies": {
+        "checkIn": "15:00",
+        "checkOut": "11:00",
+        "cancellation": "Complimentary cancellation up to 48 hours prior to arrival."
+      },
+      "isFeatured": false,
+      "isPublished": true,
+      "displayOrder": 6
+    }
+  ],
+  "offers": [
+    {
+      "_id": "7ef7e6f3-12f3-4495-b6c3-b44bd67dafb1",
+      "isActive": true,
+      "createdAt": "2026-10-24T11:15:55.159Z",
+      "updatedAt": "2026-10-24T11:15:55.159Z",
+      "title": "Timeless Escape: 4th Night Complimentary",
+      "subtitle": "Extend your sanctuary by the coastline",
+      "description": "Immerse yourself in coastal tranquility. Book a consecutive three-night stay in any of our Ocean Suites or Private Villas, and receive the fourth night with our compliments, including daily gourmet breakfast for two.",
+      "tag": "Extended Stay Privilege",
+      "discountText": "Stay 4, Pay 3",
+      "validFrom": "2026-10-01",
+      "validTo": "2026-12-20",
+      "promoCode": "XYZ4TH",
+      "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80",
+      "perks": [
+        "Fourth night complimentary on eligible suites",
+        "Daily gourmet breakfast for two at The Terrace",
+        "Welcome reserve refreshments in suite",
+        "Guaranteed 14:00 late check-out"
+      ],
+      "order": 1
+    },
+    {
+      "_id": "f9348d17-5846-4ef5-9736-6a10122d33f6",
+      "isActive": true,
+      "createdAt": "2026-10-24T11:15:55.159Z",
+      "updatedAt": "2026-10-24T11:15:55.159Z",
+      "title": "Couples Sanctuary & Spa Ritual",
+      "subtitle": "Rejuvenate together in holistic serenity",
+      "description": "An idyllic romantic retreat featuring a 90-minute bespoke couples massage, followed by a private sunset cabana dinner paired with estate wines curated by our master chef.",
+      "tag": "Romance & Wellness",
+      "discountText": "₹15,000 Spa Credit Included",
+      "validFrom": "2026-10-15",
+      "validTo": "2027-04-30",
+      "promoCode": "ROMANCE26",
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
+      "perks": [
+        "90-Minute Signature Couples Massage Ritual",
+        "Three-course candlelit dinner in private ocean cabana",
+        "Chilled welcome refreshments upon arrival",
+        "Daily access to mineral thermal pools"
+      ],
+      "order": 2
+    },
+    {
+      "_id": "e7217095-2c11-49e3-9e62-4a50714a5741",
+      "isActive": true,
+      "createdAt": "2026-10-24T11:15:55.160Z",
+      "updatedAt": "2026-10-24T11:15:55.160Z",
+      "title": "Advance Sanctuary Privilege",
+      "subtitle": "Plan ahead for preferred seasonal rates",
+      "description": "Reserve your stay at least 30 days prior to arrival to enjoy preferred rates across all suites, along with complimentary priority suite upgrade upon check-in, subject to availability.",
+      "tag": "Early Booking",
+      "discountText": "Up to 20% Privilege Rate",
+      "validFrom": "2026-11-01",
+      "validTo": "2027-08-31",
+      "promoCode": "ADVANCE26",
+      "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+      "perks": [
+        "Privileged base rate deduction",
+        "Priority suite tier upgrade upon check-in",
+        "Valet parking complimentary throughout your stay",
+        "Flexible single-date rescheduling window"
+      ],
+      "order": 3
+    }
+  ],
+  "content": {
+    "hotel_info": {
+      "name": "XYZ Hotel",
+      "tagline": "A Luxury Sanctuary of Timeless Elegance",
+      "shortDescription": "Nestled along the pristine coastal shores, XYZ Hotel offers an exquisite blend of refined architecture, Michelin-caliber gastronomy, and deeply restorative wellness retreats.",
+      "address": {
+        "street": "420 Marine Promenade",
+        "city": "Coastal Bay, Goa",
+        "state": "Goa",
+        "postalCode": "403001",
+        "country": "India",
+        "full": "420 Marine Promenade, Coastal Bay, Goa 403001, India"
+      },
+      "coordinates": {
+        "lat": 15.2993,
+        "lng": 73.9634
+      },
+      "contact": {
+        "phone": "+91 98201 23456",
+        "phoneRaw": "+919820123456",
+        "email": "concierge@xyzhotel.com",
+        "reservationsEmail": "reservations@xyzhotel.com",
+        "whatsapp": "919820123456",
+        "whatsappFormatted": "+91 98201 23456",
+        "receptionHours": "24 Hours Daily",
+        "conciergeHours": "06:00 – 23:00 Daily"
+      },
+      "policies": {
+        "checkInTime": "15:00",
+        "checkOutTime": "11:00",
+        "earlyCheckInNote": "Early check-in subject to availability upon arrival; please notify the concierge.",
+        "cancellationPolicy": "Inquiries do not incur charges. Confirmed reservations offer complimentary cancellation up to 48 hours prior to arrival date unless specified otherwise in promotional terms.",
+        "petPolicy": "Well-mannered dogs welcomed in designated Garden Villas with dedicated pet concierge kit (fee applies).",
+        "smokingPolicy": "XYZ Hotel is a 100% smoke-free and vape-free sanctuary across all guest rooms, suites, and public indoor spaces."
+      },
+      "lastUpdatedAt": "2026-11-13T08:09:55.453Z",
+      "lastUpdatedBy": "Staff"
+    },
+    "dining": [
+      {
+        "name": "The Terrace Restaurant",
+        "cuisine": "Coastal Mediterranean & Fresh Seafood",
+        "chef": "Executive Chef Laurent Fournier",
+        "description": "An open-air dining spectacle suspended above the sea waves. Indulge in line-caught sea bass, hand-rolled saffron pasta, and an extensive cellar of biodynamic vintages.",
+        "hours": "Breakfast 07:00 – 11:00 | Dinner 18:00 – 22:30",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+        "dressCode": "Resort Elegant (Collared shirts for gentlemen; no athletic attire)"
+      },
+      {
+        "name": "Saltwater Grill & Tide Bar",
+        "cuisine": "Artisan Wood-Fired Grilling & Coastal Seafood",
+        "chef": "Chef de Cuisine Kenji Tanaka",
+        "description": "Directly alongside the ocean tide pools. Savor freshly prepared catch of the day, charcoal-roasted king prawns, and tender cuts alongside chilled wines and beverages.",
+        "hours": "Lunch 12:00 – 16:30 | Sunset Cocktails 16:30 – 21:00",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+        "dressCode": "Smart Casual"
+      },
+      {
+        "name": "L’Horizon Sunset Lounge",
+        "cuisine": "Botanical Mixology & Small Plates",
+        "chef": "Master Mixologist Camille Dupuis",
+        "description": "Gather at golden hour for single-barrel spirits, botanical infusions, and light evening tapas accompanied by live acoustic music.",
+        "hours": "Daily 16:00 – 01:00",
+        "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80",
+        "dressCode": "Resort Evening"
+      }
+    ],
+    "wellness": {
+      "title": "The XYZ Ocean Spa & Wellness Sanctuary",
+      "tagline": "Ancient Thalassotherapy Meets Modern Restorative Science",
+      "description": "Draw upon the healing vitality of the sea. Spanning 15,000 square feet, our spa offers heated mineral pools, Himalayan salt saunas, open-air meditation decks, and custom restorative treatments curated by master practitioners.",
+      "features": [
+        "Heated Ocean Mineral Hydrotherapy Pools",
+        "Traditional Cedarwood & Herbal Steam Saunas",
+        "Private Sunset Yoga & Sound Bath Pavilions",
+        "Cold-Plunge Cryo-Therapy Suites",
+        "Biologique Recherche & Organic Botanical Treatments",
+        "Modern Fitness Center with Coastal Views"
+      ],
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
+      "lastUpdatedAt": "2026-11-13T08:09:55.455Z",
+      "lastUpdatedBy": "Staff"
+    },
+    "faqs": [
+      {
+        "question": "What is the procedure for booking inquiries through this website?",
+        "answer": "Submitting a booking inquiry sends your desired dates and room preferences directly to our private reservations concierge. Our team personally reviews real-time suite inventory and contacts you via phone or email within 2 to 4 hours with guaranteed availability and a customized reservation confirmation."
+      },
+      {
+        "question": "Are published room rates all-inclusive or subject to confirmation?",
+        "answer": "All published prices on this website represent authorized baseline rates in Indian Rupees (₹). Final total pricing, including seasonal adjustments, applicable taxes (GST), and any requested bespoke additions, is formally provided and confirmed by our reservation team before any commitment is finalized."
+      },
+      {
+        "question": "What are the official check-in and check-out times?",
+        "answer": "Check-in commences at 15:00 (3:00 PM), and check-out is at 11:00 AM (12:00 PM for Penthouse & Villa guests). Early check-in or late check-out may be arranged in advance with our concierge team based on availability."
+      },
+      {
+        "question": "Do you offer private airport transfers and chauffeur services?",
+        "answer": "Yes. Our private fleet of luxury house cars provides complimentary transfers within a 5-mile local radius. Private airport transfers from the nearest international airport can be scheduled with our concierge."
+      },
+      {
+        "question": "What is your cancellation and modification policy?",
+        "answer": "Booking inquiries carry zero financial obligation. Once a reservation is confirmed with our front desk, complimentary cancellation is available up to 48 hours prior to arrival date (7 days for Penthouse bookings), after which the first night deposit applies."
+      },
+      {
+        "question": "Can dietary restrictions and bespoke dining requests be accommodated?",
+        "answer": "Absolutely. Our culinary teams across The Terrace Restaurant and Saltwater Grill regularly prepare personalized Jain, vegetarian, vegan, and allergen-safe menus. Please note any dietary preferences in your booking inquiry."
+      }
+    ],
+    "gallery": [
+      {
+        "id": "gal-1",
+        "title": "Infinity Oceanfront Pool at Sunset",
+        "category": "Resort",
+        "url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Heated cliffside infinity pool overlooking the sunset"
+      },
+      {
+        "id": "gal-2",
+        "title": "The Ocean Suite Master Bedroom",
+        "category": "Rooms",
+        "url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Panoramic ocean view bedroom with custom king bed"
+      },
+      {
+        "id": "gal-3",
+        "title": "The Terrace Fine Dining",
+        "category": "Dining",
+        "url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Candlelit dining overlooking the evening coastal surf"
+      },
+      {
+        "id": "gal-4",
+        "title": "Thalassotherapy & Mineral Spa",
+        "category": "Wellness",
+        "url": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Calming hydrotherapy mineral pool and treatment suites"
+      },
+      {
+        "id": "gal-5",
+        "title": "Royal Penthouse Wraparound Veranda",
+        "category": "Rooms",
+        "url": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Private open-air lounge and heated plunge pool"
+      },
+      {
+        "id": "gal-6",
+        "title": "Zen Botanical Courtyard Villa",
+        "category": "Rooms",
+        "url": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Fragrant tropical greenery surrounding private villa retreat"
+      },
+      {
+        "id": "gal-7",
+        "title": "L’Horizon Sunset Cocktail Lounge",
+        "category": "Dining",
+        "url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Artisan mixology and live music lounge"
+      },
+      {
+        "id": "gal-8",
+        "title": "Private Cliffside Ocean Walkway",
+        "category": "Resort",
+        "url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+        "caption": "Secluded seaside path directly accessible to hotel guests"
+      }
+    ],
+    "testimonials": [
+      {
+        "id": "t-1",
+        "guestName": "Rajesh & Sunita Mehra",
+        "stayDate": "September 2026",
+        "roomType": "Royal Horizon Penthouse",
+        "comment": "An extraordinary sanctuary. From our private arrival to the attentive discretion of our butler, every detail at XYZ Hotel whispered understated refinement. The sunset views over the sea from the plunge pool are unforgettable.",
+        "rating": 5,
+        "verified": true
+      },
+      {
+        "id": "t-2",
+        "guestName": "Ananya Singhal",
+        "stayDate": "August 2026",
+        "roomType": "Garden Sanctuary Villa",
+        "comment": "The spa and Zen garden villa exceeded every expectation. True peace and privacy, with culinary creations that rival top international establishments. We will certainly return every season.",
+        "rating": 5,
+        "verified": true
+      },
+      {
+        "id": "t-3",
+        "guestName": "Vikram & Radhika Oberoi",
+        "stayDate": "July 2026",
+        "roomType": "The Ocean Suite",
+        "comment": "Booking was remarkably smooth; the concierge phoned us within two hours of our online inquiry and tailored every reservation to our anniversary. The warmth of the hospitality is genuine and world-class.",
+        "rating": 5,
+        "verified": true
+      }
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { api } from '../services/api';
+import fallbackData from '../data/fallbackData.json';
 
 const HotelContext = createContext(null);
 
@@ -15,15 +16,15 @@ const ensureArray = (val) => {
 };
 
 export const HotelProvider = ({ children }) => {
-  const [rooms, setRooms] = useState([]);
-  const [offers, setOffers] = useState([]);
-  const [hotelInfo, setHotelInfo] = useState(null);
-  const [dining, setDining] = useState([]);
-  const [wellness, setWellness] = useState(null);
-  const [faqs, setFaqs] = useState([]);
-  const [gallery, setGallery] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [rooms, setRooms] = useState(() => fallbackData.rooms || []);
+  const [offers, setOffers] = useState(() => fallbackData.offers || []);
+  const [hotelInfo, setHotelInfo] = useState(() => fallbackData.content?.hotel_info || null);
+  const [dining, setDining] = useState(() => fallbackData.content?.dining || []);
+  const [wellness, setWellness] = useState(() => fallbackData.content?.wellness || null);
+  const [faqs, setFaqs] = useState(() => fallbackData.content?.faqs || []);
+  const [gallery, setGallery] = useState(() => fallbackData.content?.gallery || []);
+  const [testimonials, setTestimonials] = useState(() => fallbackData.content?.testimonials || []);
+  const [loading, setLoading] = useState(false);
 
   // Quick inquiry modal state
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
@@ -31,27 +32,28 @@ export const HotelProvider = ({ children }) => {
 
   const fetchHotelData = async () => {
     try {
-      setLoading(true);
       const [roomsRes, offersRes, contentRes] = await Promise.all([
         api.getRooms(),
         api.getOffers(),
         api.getContent()
       ]);
 
-      setRooms(ensureArray(roomsRes?.rooms));
-      setOffers(ensureArray(offersRes?.offers));
+      if (roomsRes?.rooms?.length) {
+        setRooms(ensureArray(roomsRes.rooms));
+      }
+      if (offersRes?.offers?.length) {
+        setOffers(ensureArray(offersRes.offers));
+      }
 
       const content = contentRes?.content || {};
-      setHotelInfo(content.hotel_info || null);
-      setDining(ensureArray(content.dining));
-      setWellness(content.wellness || null);
-      setFaqs(ensureArray(content.faqs));
-      setGallery(ensureArray(content.gallery));
-      setTestimonials(ensureArray(content.testimonials));
+      if (content.hotel_info) setHotelInfo(content.hotel_info);
+      if (content.dining?.length) setDining(ensureArray(content.dining));
+      if (content.wellness) setWellness(content.wellness);
+      if (content.faqs?.length) setFaqs(ensureArray(content.faqs));
+      if (content.gallery?.length) setGallery(ensureArray(content.gallery));
+      if (content.testimonials?.length) setTestimonials(ensureArray(content.testimonials));
     } catch (err) {
-      console.error('Failed to load hotel context data:', err);
-    } finally {
-      setLoading(false);
+      console.warn('API error in HotelContext, retaining fallback data:', err);
     }
   };
 
