@@ -49,22 +49,24 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-full border border-gold-400/60 flex items-center justify-center bg-navy-900">
-              <span className="font-serif font-bold text-gold-400 text-xs tracking-wider">XYZ</span>
+            <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center">
+              <svg viewBox="0 0 256 256" className="w-5 h-5" fill="#FFFFFF">
+                <path d="M 144 256 L 27.598 256 L 144 139.598 Z M 256 207.5 L 200 256 L 200 56 L 0 56 L 48 0 L 256 0 Z M 0 204.402 L 0 112 L 92.402 112 Z" />
+              </svg>
             </div>
-            <span className="font-serif text-lg text-white tracking-widest uppercase font-semibold">
+            <span className="font-semibold text-base text-white tracking-widest uppercase font-sans">
               XYZ Hotel
             </span>
           </div>
-          <p className="text-xs text-slate-400 leading-relaxed">
-            A coastal sanctuary of timeless elegance, private suites, and restorative wellness. Discreet bespoke service set against India’s most scenic coastal shores.
+          <p className="text-xs text-neutral-400 leading-relaxed font-light">
+            A coastal architectural sanctuary of quiet luxury, bespoke suites, and restorative wellness. Discreet service set against India’s most scenic coastal shores.
           </p>
           <div className="pt-2 flex items-center space-x-4">
             <a 
               href={`https://wa.me/${whatsapp}?text=Hello%20Concierge,%20I%20am%20inquiring%20about%20a%20stay.`}
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-emerald-900/60 border border-emerald-700/50 text-emerald-300 text-xs hover:bg-emerald-800/80 transition-colors"
+              className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 text-xs hover:bg-emerald-900/80 transition-colors"
             >
               <MessageCircle className="w-3.5 h-3.5 mr-1.5" />
               WhatsApp Concierge
@@ -77,30 +79,30 @@ export default function Footer() {
           <h4 className="font-serif text-sm tracking-widest uppercase text-gold-400 mb-4 font-semibold">
             Explore Sanctuary
           </h4>
-          <ul className="space-y-2.5 text-xs text-slate-300">
+          <ul className="space-y-3 text-xs text-slate-300">
             <li>
-              <Link to="/rooms" className="hover:text-gold-300 transition-colors flex items-center">
-                <ChevronRight className="w-3 h-3 mr-1 text-gold-500" /> Ocean Suites & Private Villas
+              <Link to="/rooms" className="hover:text-gold-300 transition-colors flex items-center group">
+                <ChevronRight className="w-3 h-3 mr-1 text-gold-500 group-hover:translate-x-1 transition-transform" /> Ocean Suites & Private Villas
               </Link>
             </li>
             <li>
-              <Link to="/dining" className="hover:text-gold-300 transition-colors flex items-center">
-                <ChevronRight className="w-3 h-3 mr-1 text-gold-500" /> Fine Dining & Tide Bar
+              <Link to="/dining" className="hover:text-gold-300 transition-colors flex items-center group">
+                <ChevronRight className="w-3 h-3 mr-1 text-gold-500 group-hover:translate-x-1 transition-transform" /> Fine Dining & Tide Bar
               </Link>
             </li>
             <li>
-              <Link to="/wellness" className="hover:text-gold-300 transition-colors flex items-center">
-                <ChevronRight className="w-3 h-3 mr-1 text-gold-500" /> Thalassotherapy & Spa
+              <Link to="/wellness" className="hover:text-gold-300 transition-colors flex items-center group">
+                <ChevronRight className="w-3 h-3 mr-1 text-gold-500 group-hover:translate-x-1 transition-transform" /> Thalassotherapy & Spa
               </Link>
             </li>
             <li>
-              <Link to="/gallery" className="hover:text-gold-300 transition-colors flex items-center">
-                <ChevronRight className="w-3 h-3 mr-1 text-gold-500" /> Visual Photography Gallery
+              <Link to="/gallery" className="hover:text-gold-300 transition-colors flex items-center group">
+                <ChevronRight className="w-3 h-3 mr-1 text-gold-500 group-hover:translate-x-1 transition-transform" /> Visual Photography Gallery
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-gold-300 transition-colors flex items-center">
-                <ChevronRight className="w-3 h-3 mr-1 text-gold-500" /> Location, Maps & Directions
+              <Link to="/contact" className="hover:text-gold-300 transition-colors flex items-center group">
+                <ChevronRight className="w-3 h-3 mr-1 text-gold-500 group-hover:translate-x-1 transition-transform" /> Location, Maps & Directions
               </Link>
             </li>
           </ul>

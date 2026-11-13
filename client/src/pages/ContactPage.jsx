@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHotel } from '../context/HotelContext';
 import { api } from '../services/api';
 import InteractiveMap from '../components/InteractiveMap';
+import ScrollReveal from '../components/ScrollReveal';
 import { 
   Phone, 
   Mail, 
@@ -70,28 +71,30 @@ export default function ContactPage() {
   const address = hotelInfo?.address?.full || '420 Marine Promenade, Coastal Bay, Goa 403001, India';
 
   return (
-    <div className="space-y-20 pb-24">
+    <div className="space-y-20 pb-24 overflow-hidden">
       
-      {/* Header Banner */}
-      <div className="relative py-24 bg-navy-950 text-white text-center">
+      {/* Header Banner with Ambient Zoom */}
+      <div className="relative py-28 bg-navy-950 text-white text-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">
           <img
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
             alt="Coastline"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center animate-subtle-zoom"
           />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/60 to-navy-950/40" />
+
+        <ScrollReveal animation="fade-up" className="relative z-10 max-w-4xl mx-auto px-4">
           <span className="text-[11px] uppercase tracking-[0.25em] text-gold-400 font-semibold block mb-2">
             Discreet Communication
           </span>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal leading-tight">
             Location, Directions & Concierge Desk
           </h1>
           <p className="text-sm sm:text-base text-slate-300 mt-4 max-w-2xl mx-auto leading-relaxed font-light">
             Our guest relations team is at your disposal 24 hours daily. Inquire regarding arrivals, private charter transfers, or custom event hosting.
           </p>
-        </div>
+        </ScrollReveal>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -100,68 +103,74 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Phone Card */}
-          <div className="bg-white p-8 rounded-xl border border-ivory-200 shadow-luxury flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-full bg-navy-950 text-gold-400 flex items-center justify-center">
-                <Phone className="w-5 h-5" />
+          <ScrollReveal animation="fade-up" delay={0}>
+            <div className="bg-white p-8 rounded-2xl border border-ivory-200/90 shadow-luxury hover:shadow-luxury-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-4 h-full">
+              <div className="space-y-3">
+                <div className="w-11 h-11 rounded-xl bg-navy-950 text-gold-400 flex items-center justify-center">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-lg font-semibold text-navy-950">Direct Telephony</h3>
+                <p className="text-xs text-slate-500 leading-relaxed font-light">
+                  Reach our front desk directly for reservations, arrival logistics, and immediate concierge requests.
+                </p>
               </div>
-              <h3 className="font-serif text-lg font-semibold text-navy-950">Direct Telephony</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Reach our front desk directly for reservations, arrival logistics, and immediate concierge requests.
-              </p>
+              <a
+                href={`tel:${phoneRaw}`}
+                className="text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors pt-3 block border-t border-ivory-200"
+              >
+                {phone}
+              </a>
             </div>
-            <a
-              href={`tel:${phoneRaw}`}
-              className="text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors pt-2 block border-t border-ivory-200"
-            >
-              {phone}
-            </a>
-          </div>
+          </ScrollReveal>
 
           {/* Email Card */}
-          <div className="bg-white p-8 rounded-xl border border-ivory-200 shadow-luxury flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-full bg-navy-950 text-gold-400 flex items-center justify-center">
-                <Mail className="w-5 h-5" />
+          <ScrollReveal animation="fade-up" delay={100}>
+            <div className="bg-white p-8 rounded-2xl border border-ivory-200/90 shadow-luxury hover:shadow-luxury-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-4 h-full">
+              <div className="space-y-3">
+                <div className="w-11 h-11 rounded-xl bg-navy-950 text-gold-400 flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-lg font-semibold text-navy-950">Electronic Mail</h3>
+                <p className="text-xs text-slate-500 leading-relaxed font-light">
+                  Send your itinerary questions or special requests. Our team responds within 2 to 4 business hours.
+                </p>
               </div>
-              <h3 className="font-serif text-lg font-semibold text-navy-950">Electronic Mail</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Send your itinerary questions or special requests. Our team responds within 2 to 4 business hours.
-              </p>
+              <a
+                href={`mailto:${email}`}
+                className="text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors pt-3 block border-t border-ivory-200 truncate"
+              >
+                {email}
+              </a>
             </div>
-            <a
-              href={`mailto:${email}`}
-              className="text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors pt-2 block border-t border-ivory-200 truncate"
-            >
-              {email}
-            </a>
-          </div>
+          </ScrollReveal>
 
           {/* WhatsApp Card */}
-          <div className="bg-white p-8 rounded-xl border border-ivory-200 shadow-luxury flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-full bg-emerald-900 text-emerald-300 flex items-center justify-center">
-                <MessageCircle className="w-5 h-5" />
+          <ScrollReveal animation="fade-up" delay={200}>
+            <div className="bg-white p-8 rounded-2xl border border-ivory-200/90 shadow-luxury hover:shadow-luxury-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-4 h-full">
+              <div className="space-y-3">
+                <div className="w-11 h-11 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-lg font-semibold text-navy-950">WhatsApp Concierge</h3>
+                <p className="text-xs text-slate-500 leading-relaxed font-light">
+                  Instant encrypted mobile messaging with our on-duty front desk host for quick answers.
+                </p>
               </div>
-              <h3 className="font-serif text-lg font-semibold text-navy-950">WhatsApp Concierge</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Instant encrypted mobile messaging with our on-duty front desk host for quick answers.
-              </p>
+              <a
+                href={`https://wa.me/${whatsapp}?text=Hello%20Concierge,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors pt-3 block border-t border-ivory-200"
+              >
+                Start WhatsApp Conversation &rarr;
+              </a>
             </div>
-            <a
-              href={`https://wa.me/${whatsapp}?text=Hello%20Concierge,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-semibold text-emerald-700 hover:text-emerald-600 transition-colors pt-2 block border-t border-ivory-200"
-            >
-              Start WhatsApp Conversation &rarr;
-            </a>
-          </div>
+          </ScrollReveal>
 
         </div>
 
         {/* Interactive Location Map Component */}
-        <div className="space-y-4">
+        <ScrollReveal animation="fade-up" className="space-y-4">
           <div className="text-left">
             <span className="text-[11px] uppercase tracking-[0.25em] text-gold-600 font-semibold block">
               Verified Map Coordinates
@@ -174,14 +183,14 @@ export default function ContactPage() {
             address={hotelInfo?.address}
             coordinates={hotelInfo?.coordinates}
           />
-        </div>
+        </ScrollReveal>
 
         {/* Driving Directions & Contact Form Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Driving Directions */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white p-6 rounded-xl border border-ivory-200 shadow-luxury space-y-4">
+          <ScrollReveal animation="fade-right" duration={850} className="lg:col-span-5 space-y-6">
+            <div className="bg-white p-7 sm:p-8 rounded-2xl border border-ivory-200/90 shadow-luxury space-y-4">
               <span className="text-[11px] uppercase tracking-[0.2em] text-gold-600 font-semibold block">
                 Transportation & Logistics
               </span>
@@ -189,27 +198,27 @@ export default function ContactPage() {
                 Directions to The Sanctuary
               </h3>
 
-              <div className="space-y-4 text-xs text-slate-600 leading-relaxed">
+              <div className="space-y-4 text-xs text-slate-600 leading-relaxed font-light">
                 <div className="border-l-2 border-gold-500 pl-3">
-                  <strong className="text-navy-950 block">From San Diego Int’l Airport (SAN) — 22 min (14 miles):</strong>
-                  Take I-5 North toward La Jolla. Take Exit 26B for La Jolla Parkway. Follow Torrey Pines Road onto Prospect Street, turning right onto Ocean Promenade. The private resort gates will be on your left.
+                  <strong className="text-navy-950 block font-medium">From Dabolim Int’l Airport (GOI) — 45 mins (28 km):</strong>
+                  Follow NH66 northbound toward Coastal Bay. Turn west at Marine Promenade. The private resort gates and guard house are positioned on your seaside left.
                 </div>
 
                 <div className="border-l-2 border-gold-500 pl-3">
-                  <strong className="text-navy-950 block">From Los Angeles (LAX) — 1h 45 min (110 miles):</strong>
-                  Take I-405 South merging onto I-5 South toward San Diego. Take Exit 28 for La Jolla Village Drive, proceed west toward Torrey Pines Road and onto Ocean Promenade.
+                  <strong className="text-navy-950 block font-medium">From Manohar Int’l Airport (MOPA) — 65 mins (52 km):</strong>
+                  Take the new Expressway South toward Panaji, proceeding toward Coastal Bay via NH66. Private house car transfers are available upon request.
                 </div>
 
-                <div className="border-l-2 border-emerald-600 pl-3 bg-emerald-50/50 p-2 rounded-r">
-                  <strong className="text-emerald-950 block">Valet & Chauffeur Services:</strong>
-                  Complimentary valet parking is provided to all registered suite guests. Electric vehicle high-speed charging bays are available on premises.
+                <div className="border-l-2 border-emerald-600 pl-3 bg-emerald-50/50 p-2.5 rounded-r">
+                  <strong className="text-emerald-950 block font-medium">Valet & Chauffeur Services:</strong>
+                  Complimentary secured valet parking is provided to all registered suite guests. Electric vehicle high-speed charging bays are available on premises.
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Contact Form with Spam Honeypot */}
-          <div className="lg:col-span-7 bg-white p-8 rounded-xl border border-ivory-200 shadow-luxury space-y-5">
+          <ScrollReveal animation="fade-left" duration={850} delay={150} className="lg:col-span-7 bg-white p-8 sm:p-9 rounded-2xl border border-ivory-200/90 shadow-luxury space-y-5">
             <div>
               <span className="text-[11px] uppercase tracking-[0.2em] text-gold-600 font-semibold block">
                 Direct Inquiry Form
@@ -217,20 +226,20 @@ export default function ContactPage() {
               <h3 className="font-serif text-2xl font-semibold text-navy-950 mt-1">
                 Send a Message to the Concierge
               </h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-500 mt-1 font-light">
                 For room reservations, please utilize the booking inquiry system; for general questions or dining requests, submit below.
               </p>
             </div>
 
             {successMsg && (
-              <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-xs flex items-center space-x-2">
+              <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-xs flex items-center space-x-2 animate-fade-in">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>{successMsg}</span>
               </div>
             )}
 
             {errorMsg && (
-              <div className="p-4 bg-rose-50 border border-rose-200 text-rose-700 rounded-lg text-xs flex items-center space-x-2">
+              <div className="p-4 bg-rose-50 border border-rose-200 text-rose-700 rounded-lg text-xs flex items-center space-x-2 animate-fade-in">
                 <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
                 <span>{errorMsg}</span>
               </div>
@@ -238,7 +247,7 @@ export default function ContactPage() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               
-              {/* Spam Trap Honeypot field (hidden from real users) */}
+              {/* Spam Trap Honeypot field */}
               <input
                 type="text"
                 name="honeypot"
@@ -259,24 +268,24 @@ export default function ContactPage() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="e.g. Marcus Sterling"
+                    placeholder="e.g. Eleanor Vance"
                     required
-                    className="w-full bg-ivory-50 border border-slate-300 rounded px-3 py-2 text-xs text-navy-950 focus:outline-none focus:border-gold-500"
+                    className="w-full bg-ivory-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-gold-500 transition-colors"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-navy-900 font-medium mb-1">
-                    Your Email *
+                    Email Address *
                   </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="e.g. marcus@example.com"
+                    placeholder="e.g. eleanor@example.com"
                     required
-                    className="w-full bg-ivory-50 border border-slate-300 rounded px-3 py-2 text-xs text-navy-950 focus:outline-none focus:border-gold-500"
+                    className="w-full bg-ivory-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-gold-500 transition-colors"
                   />
                 </div>
               </div>
@@ -284,7 +293,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-navy-900 font-medium mb-1">
-                    Phone Number (Optional)
+                    Phone / WhatsApp
                   </label>
                   <input
                     type="tel"
@@ -292,7 +301,7 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="e.g. +91 98201 23456"
-                    className="w-full bg-ivory-50 border border-slate-300 rounded px-3 py-2 text-xs text-navy-950 focus:outline-none focus:border-gold-500"
+                    className="w-full bg-ivory-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-gold-500 transition-colors"
                   />
                 </div>
 
@@ -304,7 +313,7 @@ export default function ContactPage() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full bg-ivory-50 border border-slate-300 rounded px-3 py-2 text-xs text-navy-950 focus:outline-none focus:border-gold-500"
+                    className="w-full bg-ivory-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-gold-500 transition-colors"
                   >
                     <option value="General Inquiry">General Guest Inquiry</option>
                     <option value="Dining Reservation">Dining / Table Reservation</option>
@@ -326,21 +335,21 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="How may our concierge assist your upcoming visit?"
                   required
-                  className="w-full bg-ivory-50 border border-slate-300 rounded px-3 py-2 text-xs text-navy-950 focus:outline-none focus:border-gold-500 resize-none"
+                  className="w-full bg-ivory-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-gold-500 resize-none transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-navy-950 text-gold-300 hover:text-white rounded text-xs uppercase tracking-[0.2em] font-semibold transition-colors flex items-center justify-center space-x-2"
+                className="w-full py-3.5 bg-navy-950 text-gold-300 hover:text-white rounded-lg text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg shimmer-button active:scale-98"
               >
                 <Send className="w-3.5 h-3.5" />
-                <span>{loading ? 'Transmitting...' : 'Send Message to Concierge'}</span>
+                <span>{loading ? 'Transmitting Message...' : 'Send Message to Concierge'}</span>
               </button>
 
             </form>
-          </div>
+          </ScrollReveal>
 
         </div>
 

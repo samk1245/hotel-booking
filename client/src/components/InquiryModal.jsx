@@ -24,15 +24,18 @@ export default function InquiryModal() {
   if (!isInquiryModalOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto bg-navy-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in"
+      onClick={closeInquiryModal}
+    >
       <div 
-        className="relative w-full max-w-3xl my-8 bg-transparent"
+        className="relative w-full max-w-3xl my-8 bg-transparent transform transition-all duration-300 ease-out"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Floating Close Button */}
         <button
           onClick={closeInquiryModal}
-          className="absolute -top-12 right-0 sm:-right-4 text-white hover:text-gold-400 p-2 bg-navy-900/80 rounded-full border border-gold-400/30 transition-colors z-10"
+          className="absolute -top-12 right-0 sm:-right-4 text-white hover:text-gold-400 p-2 bg-navy-900/90 rounded-full border border-gold-400/40 transition-colors z-10 shadow-lg hover:scale-105"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />

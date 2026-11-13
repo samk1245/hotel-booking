@@ -393,14 +393,20 @@ export default function InquiryForm({ initialRoom = null, onSuccess = null }) {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-3.5 px-6 rounded text-xs uppercase tracking-[0.2em] font-semibold text-navy-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 hover:from-gold-200 hover:to-gold-400 transition-all shadow-md hover:shadow-gold-glow flex items-center justify-center space-x-2 ${
-              loading ? 'opacity-70 cursor-not-allowed' : ''
+            className={`w-full py-4 px-6 rounded-lg text-xs uppercase tracking-[0.2em] font-semibold text-navy-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 hover:from-gold-200 hover:to-gold-400 transition-all duration-300 shadow-md hover:shadow-gold-glow flex items-center justify-center space-x-2 shimmer-button active:scale-98 ${
+              loading ? 'opacity-75 cursor-not-allowed' : ''
             }`}
           >
             {loading ? (
-              <span>Transmitting Inquiry...</span>
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 border-2 border-navy-950 border-t-transparent rounded-full animate-spin" />
+                <span>Transmitting Priority Hold...</span>
+              </div>
             ) : (
-              <span>Submit Booking Inquiry &bull; Priority Hold</span>
+              <div className="flex items-center space-x-2">
+                <span>Submit Booking Inquiry &bull; Priority Hold</span>
+                <ShieldCheck className="w-4 h-4" />
+              </div>
             )}
           </button>
         </div>

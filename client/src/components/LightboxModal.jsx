@@ -63,13 +63,14 @@ export default function LightboxModal({ images, activeIndex, onClose, onPrev, on
         onClick={(e) => e.stopPropagation()}
       >
         <img
+          key={current.url}
           src={current.url}
           alt={current.caption || current.title || 'Hotel Photograph'}
-          className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-navy-800"
+          className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl border border-navy-800 animate-fade-in"
         />
         
         {/* Caption */}
-        <div className="mt-4 text-center max-w-2xl px-4">
+        <div className="mt-4 text-center max-w-2xl px-4 animate-fade-in">
           <h4 className="font-serif text-lg text-white font-medium">
             {current.title || current.caption}
           </h4>

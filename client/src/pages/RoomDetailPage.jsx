@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { api } from '../services/api';
 import InquiryForm from '../components/InquiryForm';
+import ScrollReveal from '../components/ScrollReveal';
 import { 
   Users, 
   BedDouble, 
@@ -84,18 +85,19 @@ export default function RoomDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* Left Column (Photos, Specs, Description, Amenities, Policies) */}
-          <div className="lg:col-span-7 space-y-8">
+          <ScrollReveal animation="fade-right" duration={850} className="lg:col-span-7 space-y-8">
             
             {/* Photo Showcase */}
             <div className="space-y-3">
-              <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-navy-950 shadow-luxury">
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-navy-950 shadow-luxury group">
                 <img
+                  key={primaryImage}
                   src={primaryImage}
                   alt={room.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover animate-fade-in group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-navy-900/80 backdrop-blur-md text-gold-300 text-[10px] font-semibold uppercase tracking-widest rounded-full border border-gold-400/30">
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="px-3.5 py-1.5 bg-navy-900/85 backdrop-blur-md text-gold-300 text-[10px] font-semibold uppercase tracking-widest rounded-full border border-gold-400/30">
                     {room.category}
                   </span>
                 </div>
@@ -108,8 +110,8 @@ export default function RoomDetailPage() {
                     <button
                       key={idx}
                       onClick={() => setActiveImageIndex(idx)}
-                      className={`relative w-24 h-16 rounded-md overflow-hidden shrink-0 border-2 transition-all ${
-                        activeImageIndex === idx ? 'border-gold-500 ring-2 ring-gold-400/30' : 'border-transparent opacity-70 hover:opacity-100'
+                      className={`relative w-24 h-16 rounded-lg overflow-hidden shrink-0 border-2 transition-all duration-300 ${
+                        activeImageIndex === idx ? 'border-gold-500 ring-2 ring-gold-400/40 scale-102' : 'border-transparent opacity-65 hover:opacity-100'
                       }`}
                     >
                       <img src={img.url} alt={img.caption || room.name} className="w-full h-full object-cover" />
@@ -203,29 +205,29 @@ export default function RoomDetailPage() {
               </p>
             </div>
 
-          </div>
+          </ScrollReveal>
 
           {/* Right Column: Sticky Booking Inquiry Card */}
-          <div className="lg:col-span-5">
+          <ScrollReveal animation="fade-left" duration={850} delay={150} className="lg:col-span-5">
             <div className="sticky top-28 space-y-6">
               
               {/* Pricing Callout Card */}
-              <div className="bg-navy-950 text-white p-6 rounded-xl border border-gold-400/40 shadow-luxury space-y-3">
+              <div className="bg-navy-950 text-white p-6 sm:p-7 rounded-2xl border border-gold-400/40 shadow-luxury space-y-3">
                 <div className="flex items-baseline justify-between">
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-400 block">
+                    <span className="text-[10px] uppercase tracking-wider text-slate-400 block font-light">
                       Indicative Starting Rate
                     </span>
                     <span className="font-serif text-3xl font-bold text-gold-300">
                       ₹{room.basePrice?.toLocaleString('en-IN')}
                     </span>
-                    <span className="text-xs text-slate-400 ml-1">/ night</span>
+                    <span className="text-xs text-slate-400 ml-1 font-light">/ night</span>
                   </div>
-                  <span className="text-[10px] bg-emerald-900/80 border border-emerald-700 text-emerald-300 px-2.5 py-1 rounded">
+                  <span className="text-[10px] bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 px-3 py-1 rounded-full font-medium">
                     Subject to Confirmation
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed border-t border-navy-800 pt-3">
+                <p className="text-[11px] text-slate-400 leading-relaxed border-t border-navy-800/80 pt-3 font-light">
                   All published rates are verified baseline figures. Our reservations team will confirm live dates and any customized inclusions upon inquiry review.
                 </p>
               </div>
@@ -234,7 +236,7 @@ export default function RoomDetailPage() {
               <InquiryForm initialRoom={room} />
 
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
 

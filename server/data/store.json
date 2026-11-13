@@ -9,7 +9,7 @@
       "category": "Deluxe Ocean Suite",
       "headline": "Sweeping Arabian Sea Horizons & Private Sunset Terrace",
       "description": "Perched along the serene coastal shoreline, this sanctuary features expansive floor-to-ceiling glass windows framing endless sea vistas. Decorated in soothing tones of warm ivory, brushed brass, and teak wood, the suite provides a hand-carved king bed, a freestanding deep soaking tub overlooking the sea, and an expansive private terrace with sun loungers.",
-      "basePrice": 45000,
+      "basePrice": 11500,
       "priceDisplayNote": "Rates subject to seasonal confirmation by our reservations desk",
       "capacity": {
         "adults": 2,
@@ -69,7 +69,7 @@
       "category": "Royal Penthouse",
       "headline": "Crown Jewel of XYZ Hotel with 360° Panoramic Coastline Views",
       "description": "An architectural tour de force occupying the top level of the resort. Features two expansive master suites, a formal dining salon, a private infinity edge plunge pool on the wraparound veranda, and dedicated around-the-clock butler service. Designed for discerning travelers seeking peerless privacy and grandeur.",
-      "basePrice": 95000,
+      "basePrice": 22500,
       "priceDisplayNote": "Exclusive suite rate; subject to private reservation consultation",
       "capacity": {
         "adults": 4,
@@ -129,7 +129,7 @@
       "category": "Azure Garden Villa",
       "headline": "Botanical Seclusion with Private Zen Courtyard",
       "description": "Tucked within the resort’s lush coastal botanical gardens, our Sanctuary Villa offers absolute tranquility. Enjoy a secluded sun-dappled courtyard, an outdoor stone rain shower beneath tropical frangipani trees, and serene architecture crafted from warm cedar and stone.",
-      "basePrice": 32000,
+      "basePrice": 8500,
       "priceDisplayNote": "Rates subject to seasonal availability confirmation",
       "capacity": {
         "adults": 2,
@@ -182,7 +182,7 @@
       "category": "Executive Suite",
       "headline": "Refined Contemporary Comfort with Marina & Bay Views",
       "description": "A sophisticated sanctuary balancing work and restorative leisure. Features an ergonomic solid walnut work desk, high-speed encrypted Wi-Fi, an inviting living room, and a generous bedroom overlooking the yacht marina and rugged cliffs.",
-      "basePrice": 22000,
+      "basePrice": 6800,
       "priceDisplayNote": "Rates subject to reservation team verification",
       "capacity": {
         "adults": 2,
@@ -234,7 +234,7 @@
       "category": "Presidential Villa",
       "headline": "Oceanfront Estate with Private Plunge Pool & Sun Deck",
       "description": "Wake up to golden coastal dawns. This standalone villa provides unprecedented closeness to the surf, featuring dual master suites, private heated plunge pool, dedicated outdoor kitchen, and an expansive lawn kissing the coastline path.",
-      "basePrice": 65000,
+      "basePrice": 16500,
       "priceDisplayNote": "Rates subject to seasonal confirmation",
       "capacity": {
         "adults": 4,
@@ -286,7 +286,7 @@
       "category": "Superior Room",
       "headline": "Classic Elegance & Warm Hospitality",
       "description": "An intimate retreat providing unmatched comfort. Thoughtfully appointed with natural hardwood floors, custom woven textiles, a spa-inspired rain shower, and a private Juliet balcony overlooking our fragrant herb and rose gardens.",
-      "basePrice": 14500,
+      "basePrice": 4900,
       "priceDisplayNote": "Rates subject to seasonal confirmation",
       "capacity": {
         "adults": 2,
@@ -325,6 +325,66 @@
   ],
   "inquiries": [
     {
+      "_id": "b44be012-3e5c-4295-be14-8dc0c6232ca6",
+      "status": "Contacted",
+      "internalNotes": [
+        {
+          "_id": "18ed72ea-4560-410b-8f9f-cfeb0783bddc",
+          "note": "Contacted guest via phone; preferred oceanfront upper level.",
+          "authorName": "Aditya Sharma",
+          "authorId": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+          "createdAt": "2026-11-13T08:04:08.583Z"
+        }
+      ],
+      "createdAt": "2026-11-13T08:04:08.485Z",
+      "updatedAt": "2026-11-13T08:04:08.583Z",
+      "inquiryReference": "XYZ-2026-5UVD5",
+      "guestName": "Eleanor Roosevelt",
+      "email": "traveler.1794557048415@example.com",
+      "phone": "+91 98201 23456",
+      "checkInDate": "2026-11-23",
+      "checkOutDate": "2026-11-27",
+      "adults": 2,
+      "children": 0,
+      "preferredRoomId": "",
+      "preferredRoomName": "The Ocean Suite",
+      "roomCount": 1,
+      "specialRequests": "Quiet suite on high floor with ocean sunset view please.",
+      "consentPrivacy": true,
+      "ipAddress": "127.0.0.1",
+      "userAgent": ""
+    },
+    {
+      "_id": "9c728921-49e9-43a0-844a-423a2eba2697",
+      "status": "Contacted",
+      "internalNotes": [
+        {
+          "_id": "60d7f4b9-0fc9-47d9-8add-95d284193e1a",
+          "note": "Contacted guest via phone; preferred oceanfront upper level.",
+          "authorName": "Aditya Sharma",
+          "authorId": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+          "createdAt": "2026-11-13T07:40:06.426Z"
+        }
+      ],
+      "createdAt": "2026-11-13T07:40:06.312Z",
+      "updatedAt": "2026-11-13T07:40:06.426Z",
+      "inquiryReference": "XYZ-2026-S8GQV",
+      "guestName": "Eleanor Roosevelt",
+      "email": "traveler.1794555606194@example.com",
+      "phone": "+91 98201 23456",
+      "checkInDate": "2026-11-23",
+      "checkOutDate": "2026-11-27",
+      "adults": 2,
+      "children": 0,
+      "preferredRoomId": "",
+      "preferredRoomName": "The Ocean Suite",
+      "roomCount": 1,
+      "specialRequests": "Quiet suite on high floor with ocean sunset view please.",
+      "consentPrivacy": true,
+      "ipAddress": "127.0.0.1",
+      "userAgent": ""
+    },
+    {
       "_id": "825075b9-e317-4d50-aa89-ce61ada0b09d",
       "status": "Contacted",
       "internalNotes": [
@@ -360,12 +420,12 @@
       "_id": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
       "isActive": true,
       "createdAt": "2026-10-24T11:15:55.152Z",
-      "updatedAt": "2026-10-24T11:25:41.298Z",
+      "updatedAt": "2026-11-13T08:04:08.567Z",
       "name": "Aditya Sharma",
       "email": "admin@xyzhotel.com",
       "passwordHash": "$2a$10$5vHFPcbJsGtSW1JSsEHywOJi7HX.AspOcM0Ksnm.TyPmD15dF7OIK",
       "role": "superadmin",
-      "lastLogin": "2026-10-24T11:25:41.298Z"
+      "lastLogin": "2026-11-13T08:04:08.567Z"
     },
     {
       "_id": "cd7d3160-8a9b-4e09-b398-1d588947b030",
@@ -413,7 +473,7 @@
         "petPolicy": "Well-mannered dogs welcomed in designated Garden Villas with dedicated pet concierge kit (fee applies).",
         "smokingPolicy": "XYZ Hotel is a 100% smoke-free and vape-free sanctuary across all guest rooms, suites, and public indoor spaces."
       },
-      "lastUpdatedAt": "2026-10-24T11:36:19.059Z",
+      "lastUpdatedAt": "2026-11-13T08:04:08.420Z",
       "lastUpdatedBy": "Staff"
     },
     "dining": [
@@ -458,7 +518,7 @@
         "Modern Fitness Center with Coastal Views"
       ],
       "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
-      "lastUpdatedAt": "2026-10-24T11:36:19.062Z",
+      "lastUpdatedAt": "2026-11-13T08:04:08.422Z",
       "lastUpdatedBy": "Staff"
     },
     "faqs": [
@@ -644,6 +704,145 @@
     }
   ],
   "activityLogs": [
+    {
+      "_id": "a8a01a8a-517a-4999-a254-9abaa4584ad1",
+      "action": "INQUIRY_NOTE_ADDED",
+      "category": "INQUIRY",
+      "details": "Added note to inquiry XYZ-2026-5UVD5",
+      "performedBy": {
+        "id": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+        "name": "Aditya Sharma",
+        "email": "admin@xyzhotel.com",
+        "role": "superadmin"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T08:04:08.584Z"
+    },
+    {
+      "_id": "b178a8de-359b-47d0-9af8-1ed9bcaa63b2",
+      "action": "INQUIRY_STATUS_UPDATED",
+      "category": "INQUIRY",
+      "details": "Inquiry XYZ-2026-5UVD5 status updated to [Contacted] by Aditya Sharma",
+      "performedBy": {
+        "id": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+        "name": "Aditya Sharma",
+        "email": "admin@xyzhotel.com",
+        "role": "superadmin"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T08:04:08.579Z"
+    },
+    {
+      "_id": "d96155ad-0bd6-4479-925f-1722b5720f5d",
+      "action": "USER_LOGIN",
+      "category": "AUTH",
+      "details": "Aditya Sharma (superadmin) logged in successfully.",
+      "performedBy": {
+        "id": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+        "name": "Aditya Sharma",
+        "email": "admin@xyzhotel.com"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T08:04:08.569Z"
+    },
+    {
+      "_id": "e1dc5dfb-7fcf-4774-8c64-df116efe1f32",
+      "action": "INQUIRY_RECEIVED",
+      "category": "INQUIRY",
+      "details": "New booking inquiry XYZ-2026-5UVD5 received from Eleanor Roosevelt (The Ocean Suite)",
+      "performedBy": {
+        "name": "Guest Form",
+        "email": "traveler.1794557048415@example.com"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T08:04:08.495Z"
+    },
+    {
+      "_id": "7957de8f-2f5b-4239-bae2-4a69de90c16d",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "XYZ Hotel database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T08:04:08.424Z"
+    },
+    {
+      "_id": "71050b94-1420-4a4c-9f34-0d0273f7501a",
+      "action": "INQUIRY_NOTE_ADDED",
+      "category": "INQUIRY",
+      "details": "Added note to inquiry XYZ-2026-S8GQV",
+      "performedBy": {
+        "id": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+        "name": "Aditya Sharma",
+        "email": "admin@xyzhotel.com",
+        "role": "superadmin"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T07:40:06.427Z"
+    },
+    {
+      "_id": "ab9e9aee-7d91-4103-a90d-b5f68024c8fe",
+      "action": "INQUIRY_STATUS_UPDATED",
+      "category": "INQUIRY",
+      "details": "Inquiry XYZ-2026-S8GQV status updated to [Contacted] by Aditya Sharma",
+      "performedBy": {
+        "id": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+        "name": "Aditya Sharma",
+        "email": "admin@xyzhotel.com",
+        "role": "superadmin"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T07:40:06.420Z"
+    },
+    {
+      "_id": "98c731ab-b99c-4858-af7b-603dbe841f61",
+      "action": "USER_LOGIN",
+      "category": "AUTH",
+      "details": "Aditya Sharma (superadmin) logged in successfully.",
+      "performedBy": {
+        "id": "6fa7e790-4b90-4cf7-81f7-b608396960d2",
+        "name": "Aditya Sharma",
+        "email": "admin@xyzhotel.com"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T07:40:06.404Z"
+    },
+    {
+      "_id": "07b99e67-9db1-4cee-a6b5-97312df44ae5",
+      "action": "INQUIRY_RECEIVED",
+      "category": "INQUIRY",
+      "details": "New booking inquiry XYZ-2026-S8GQV received from Eleanor Roosevelt (The Ocean Suite)",
+      "performedBy": {
+        "name": "Guest Form",
+        "email": "traveler.1794555606194@example.com"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T07:40:06.326Z"
+    },
+    {
+      "_id": "226aa5c9-9215-49d3-8420-eb0972c8e00c",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "XYZ Hotel database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T07:40:06.209Z"
+    },
+    {
+      "_id": "e0aaf858-3b58-4184-af5d-1c9e1942ff18",
+      "action": "SYSTEM_INITIALIZED",
+      "category": "SYSTEM",
+      "details": "XYZ Hotel database seeded with verified rooms, verified offers, authentic content, and administrative credentials.",
+      "performedBy": {
+        "name": "System Installer"
+      },
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-11-13T07:23:51.331Z"
+    },
     {
       "_id": "31d1fbe2-a5f8-46e4-b629-17e69dd5f273",
       "action": "SYSTEM_INITIALIZED",

@@ -38,10 +38,11 @@ function ScrollToTop() {
 
 // Public layout wrapper with Navbar, Footer, and Inquiry Modal
 function PublicLayout({ children }) {
+  const { pathname } = useLocation();
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main key={pathname} className="flex-1 animate-fade-in">{children}</main>
       <Footer />
       <InquiryModal />
     </div>
